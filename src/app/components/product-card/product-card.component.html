@@ -1,10 +1,14 @@
-<div class="card" style="width: 20rem;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Gfp-otter-and-trout.jpg/1024px-Gfp-otter-and-trout.jpg" class="card-img-top" alt="Product image">
+<a [routerLink]="['/product', product.id]">
+  <div class="card" style="width: 20rem;">
+    <img src="{{product.imagePath}}" class="card-img-top" alt="Product image">
+      
     <div class="card-body text-bg-dark">
       <p class="product-title">{{ product.name }}</p>
       <p class="product-price">{{ product.price | money}}</p>
     </div>
+
     <ul class="list-group list-group-flush">
-      <li class="list-group-item seller">{{ product.seller }}</li>
+      <li class="list-group-item seller">Vendu par {{ product.seller }}</li>
     </ul>
   </div>
+</a>

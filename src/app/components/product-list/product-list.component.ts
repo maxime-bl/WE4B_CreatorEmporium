@@ -1,10 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Product } from 'src/app/classes/product';
+import { DatabaseService } from 'src/app/services/database.service';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  styleUrls: ['./product-list.component.css'],
 })
-export class ProductListComponent {
+export class ProductListComponent implements OnInit {
+  products: Product[] = [];
 
+  constructor(private databaseService: DatabaseService) {}
+
+  ngOnInit(): void {
+    this.databaseService.getAllProducts().then(
+      (products) => (this.products = products));
+  }
 }

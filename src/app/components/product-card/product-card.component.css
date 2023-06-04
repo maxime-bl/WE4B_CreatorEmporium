@@ -14,3 +14,16 @@
     background-color: var(--ce-bg-dark);
     color: rgba(0, 0, 0, 0.705);
 }
+
+.card-img-top{
+   height: 300px;
+   object-fit: cover;
+}
+
+a{
+    text-decoration: none;
+}
+
+.card{
+    border-color: black;
+}
