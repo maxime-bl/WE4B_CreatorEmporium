@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "CreatorEmporium",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

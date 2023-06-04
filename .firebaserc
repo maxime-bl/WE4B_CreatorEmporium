@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "we4bcreatoremporium": {
+      "hosting": {
+        "CreatorEmporium": [
+          "we4bcreatoremporium"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "we4bcreatoremporium"
+  }
+}

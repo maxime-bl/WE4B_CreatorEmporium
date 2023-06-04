@@ -1,1 +1,83 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global constants */
+:root{
+    --ce-bg: #e3eee1;
+    --ce-bg-dark :#dbeadb;
+    --ce-primary: #5faf7d;
+    --ce-primary-hover: #5a9f75;
+    --ce-primary-active: #54906b;
+    --ce-secondary: #cbe2df;
+    --ce-secondary-hover: #b5cbc8;
+    --ce-secondary-active: #a6bab7;
+    --ce-accent: #3c6d67; 
+}
+
+/* Bootstrap classes redefinition */
+
+.text-bg-dark{
+    background-color: var(--ce-bg-dark) !important;
+    color: black !important;
+}
+
+.text-bg-light{
+    background-color: var(--ce-bg) !important;
+}
+
+body{
+    background-color: var(--ce-bg);
+}
+
+/* Primary button */
+
+.btn-primary{
+    background-color: var(--ce-primary);
+    color: black;
+    border-width: 0;
+}
+
+.btn-primary:hover{
+    background-color: var(--ce-primary-hover);
+    color: black;
+}
+
+.btn-primary:not(:disabled):not(:disabled):active{
+    background-color: var(--ce-primary-active);
+    color: black;
+}
+
+/* Secondary button */
+
+.btn-secondary{
+    background-color: var(--ce-secondary);
+    color: black;
+    border-width: 0;
+}
+
+.btn-secondary:hover{
+    background-color: var(--ce-secondary-hover);
+    color: black;
+}
+
+.btn-secondary:not(:disabled):not(:disabled):active{
+    background-color: var(--ce-secondary-active);
+    color: black;
+}
+
+/* Lgiht button */
+
+.btn-light{
+    background-color: var(--ce-bg);
+    color: var(--ce-primary);
+    border-color:  var(--ce-primary); 
+}
+
+.btn-light:hover{
+    background-color: var(--ce-primary-hover);
+    color: black;
+    border-color:  var(--ce-primary-hover); 
+}
+
+.btn-light:not(:disabled):not(:disabled):active{
+    background-color: var(--ce-primary-active);
+    color: black;
+    border-color:  var(--ce-primary-active); 
+}
