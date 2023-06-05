@@ -13,6 +13,9 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { DatabaseService } from './services/database.service';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { ProductPageComponent } from './components/product-page/product-page.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { DatabaseService } from './services/database.service';
     NavbarComponent,
     ProductCardComponent,
     ProductListComponent,
-    MoneyPipe
+    MoneyPipe,
+    LoginComponent,
+    RegisterComponent,
+    ProductPageComponent
   ],
   imports: [
     BrowserModule,
