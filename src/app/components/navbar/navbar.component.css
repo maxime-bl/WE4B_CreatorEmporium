@@ -1,0 +1,8 @@
+.logo {
+    height: 50px;
+    width: auto;
+}
+
+.nav-link, .btn, .form-control  {
+    font-size: 19px;
+}
