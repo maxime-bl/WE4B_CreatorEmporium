@@ -17,6 +17,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import { AuthService } from './services/auth.service';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AuthService } from './services/auth.service';
     MoneyPipe,
     LoginComponent,
     RegisterComponent,
-    ProductPageComponent
+    ProductPageComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
