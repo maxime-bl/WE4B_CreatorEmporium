@@ -1,0 +1,16 @@
+.logo {
+    height: 50px;
+    width: auto;
+}
+
+.nav-link, .btn, .form-control  {
+    font-size: 19px;
+}
+
+.link-secondary:hover {
+    color: var(--ce-primary-hover) !important;
+}
+
+.link-dark:hover {
+    color: var(--ce-accent) !important;
+}
