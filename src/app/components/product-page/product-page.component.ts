@@ -8,9 +8,10 @@ import { Product } from 'src/app/classes/product';
   templateUrl: './product-page.component.html',
   styleUrls: ['./product-page.component.css'],
 })
-export class ProductPageComponent implements OnInit {
+export class ProductPageComponent {
   productId: string;
   product: Product = new Product();
+  isLoading: boolean = true;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -18,11 +19,16 @@ export class ProductPageComponent implements OnInit {
   ) {
     this.productId =
       this.activatedRoute.snapshot.paramMap.get('id') || 'undefined';
+    this.dbService.getProductById(this.productId).subscribe((product) => {
+      this.product = product;
+      this.isLoading = false;
+    });
   }
 
-  ngOnInit(): void {
-    this.dbService
-      .getProductById(this.productId)
-      .then((product) => (this.product = product));
-  }
+  // ngOnInit(): void {
+  //   this.dbService.getProductById(this.productId).subscribe((product) => {
+  //     this.product = product;
+  //     
+  //   });
+  // }
 }

@@ -1,4 +1,4 @@
-<div class="container">
+<div *ngIf="!isLoading" class="container">
     <h1>{{ product.name }}</h1>
     <h2>{{ product.price | money }}</h2>
     <img src="{{ product.imagePath }}">

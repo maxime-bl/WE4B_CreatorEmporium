@@ -8,9 +8,11 @@ import {
   getDocs,
   getDoc,
   getFirestore,
+  QuerySnapshot,
 } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 import { Product, ProductData } from '../classes/product';
+import { Observable, from, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -24,41 +26,51 @@ export class DatabaseService {
   }
 
 
-  async getProductById(id: string): Promise<Product> {
+  getProductById(id: string): Observable<Product> {
     const productsRef = collection(this.db, 'products');
     const q = query(productsRef, where('__name__', '==', id));
 
-    const querySnapshot = await getDocs(q);
-    const doc = querySnapshot.docs[0]
-    const data = doc.data() as ProductData;
-    const product = new Product(
-      doc.id,
-      data.name,
-      data.price,
-      data.seller,
-      data.imagePath
-    );
-    return product;
+    const querySnapshotPromise = getDocs(q);
+
+    return from(querySnapshotPromise).pipe(
+      map((querySnapshot : QuerySnapshot) => {
+        const doc = querySnapshot.docs[0]
+        const data = doc.data() as ProductData;
+        const product = new Product(
+          doc.id,
+          data.name,
+          data.price,
+          data.seller,
+          data.imagePath
+        );
+        return product;
+      })
+    )
+    
   }
 
 
-  async getAllProducts(): Promise<Product[]> {
+
+  getAllProducts(): Observable<Product[]> {
     const productsRef = collection(this.db, 'products');
-    const querySnapshot = await getDocs(productsRef);
-
-    const products: Product[] = [];
-    querySnapshot.forEach((doc) => {
-      const data = doc.data() as ProductData;
-      const product = new Product(
-        doc.id,
-        data.name,
-        data.price,
-        data.seller,
-        data.imagePath
-      );
-      products.push(product);
-    });
-
-    return products;
+    const querySnapshotPromise = getDocs(productsRef);
+  
+    return from(querySnapshotPromise).pipe(
+      map((querySnapshot: QuerySnapshot) => {
+        const products: Product[] = [];
+        querySnapshot.forEach((doc) => {
+          const data = doc.data() as ProductData;
+          const product = new Product(
+            doc.id,
+            data.name,
+            data.price,
+            data.seller,
+            data.imagePath
+          );
+          products.push(product);
+        });
+        return products;
+      })
+    );
   }
 }

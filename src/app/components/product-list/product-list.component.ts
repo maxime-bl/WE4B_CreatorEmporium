@@ -13,7 +13,7 @@ export class ProductListComponent implements OnInit {
   constructor(private databaseService: DatabaseService) {}
 
   ngOnInit(): void {
-    this.databaseService.getAllProducts().then(
+    this.databaseService.getAllProducts().subscribe(
       (products) => (this.products = products));
   }
 }

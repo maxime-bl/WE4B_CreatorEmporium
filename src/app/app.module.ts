@@ -16,6 +16,7 @@ import { DatabaseService } from './services/database.service';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ProductPageComponent } from './components/product-page/product-page.com
     provideStorage(() => getStorage())
   ],
   providers: [
-    DatabaseService
+    DatabaseService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
