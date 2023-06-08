@@ -17,6 +17,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import { AuthService } from './services/auth.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,9 @@ import { AuthService } from './services/auth.service';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
-    provideStorage(() => getStorage())
+    provideStorage(() => getStorage()),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     DatabaseService,

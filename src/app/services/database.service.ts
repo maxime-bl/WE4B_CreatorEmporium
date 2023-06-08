@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { initializeApp } from '@angular/fire/app';
+import { FirebaseApp, initializeApp } from '@angular/fire/app';
 import {
   Firestore,
   collection,
@@ -19,12 +19,18 @@ import { Observable, from, map } from 'rxjs';
 })
 export class DatabaseService {
   db: Firestore;
+  app: FirebaseApp;
 
   constructor(private firestore: Firestore) {
-    const app = initializeApp(environment.firebase);
-    this.db = getFirestore(app);
+    this.app = initializeApp(environment.firebase);
+    this.db = getFirestore(this.app);
   }
 
+  getAppRef(): FirebaseApp { 
+    return this.app;
+  }
+
+  /* Getters functions */
 
   getProductById(id: string): Observable<Product> {
     const productsRef = collection(this.db, 'products');
@@ -48,7 +54,6 @@ export class DatabaseService {
     )
     
   }
-
 
 
   getAllProducts(): Observable<Product[]> {
