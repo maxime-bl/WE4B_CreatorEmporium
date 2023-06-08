@@ -7,5 +7,12 @@
         "about": "About",
         "login": "Login",
         "signup": "Sign-up"
+    },
+
+    "home": {
+        "title": "Unleash your creativity with Creator Emporium",
+        "subtitle": "The ultimate source of DIY kits!",
+        "m_info": "Learn more",
+        "market": "Market"
     }
 }

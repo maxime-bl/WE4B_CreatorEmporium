@@ -14,13 +14,13 @@ export class LanguageSelectorComponent {
       imgUrl: '/assets/flags/English.png',
       code: 'en',
       name: 'English',
-      shorthand: 'ENG',
+      shorthand: 'EN',
     },
     {
-      imgUrl: '/assets/flags/French.png',
+      imgUrl: '/assets/flags/French.jpg',
       code: 'fr',
       name: 'Français',
-      shorthand: 'FRA',
+      shorthand: 'FR',
     },
   ];
   public changeLanguage(languageCode: string): void {
