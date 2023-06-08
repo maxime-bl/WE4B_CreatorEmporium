@@ -1,0 +1,11 @@
+{
+    "nav": {
+        "market": "Produits",
+        "features": "Fonctionnalités",
+        "pricing": "Tarification",
+        "qnas": "FAQs",
+        "about": "À propos",
+        "login": "Se connecter",
+        "signup": "S'inscrire"
+    }
+}

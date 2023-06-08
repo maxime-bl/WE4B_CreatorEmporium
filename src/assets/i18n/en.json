@@ -1,0 +1,11 @@
+{
+    "nav": {
+        "market": "Market",
+        "features": "Features",
+        "pricing": "Pricing",
+        "qnas": "QNAs",
+        "about": "About",
+        "login": "Login",
+        "signup": "Sign-up"
+    }
+}

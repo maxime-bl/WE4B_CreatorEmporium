@@ -18,6 +18,10 @@ import { RegisterComponent } from './components/register/register.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import { AuthService } from './services/auth.service';
 import { HomeComponent } from './components/home/home.component';
+import { HttpClientModule } from '@angular/common/http';
+import { TranslocoRootModule } from './transloco-root.module';
+import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
+import { TRANSLOCO_SCOPE } from '@ngneat/transloco';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,8 @@ import { HomeComponent } from './components/home/home.component';
     LoginComponent,
     RegisterComponent,
     ProductPageComponent,
-    HomeComponent
+    HomeComponent,
+    LanguageSelectorComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +42,9 @@ import { HomeComponent } from './components/home/home.component';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
-    provideStorage(() => getStorage())
+    provideStorage(() => getStorage()),
+    HttpClientModule,
+    TranslocoRootModule
   ],
   providers: [
     DatabaseService,
