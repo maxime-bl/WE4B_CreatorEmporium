@@ -1,5 +1,5 @@
 <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between px-3 py-2">
-  <div class="d-flex align-items-center col-md-auto mb-md-0">
+  <div class="d-flex align-items-center col-md-3 mb-md-0">
     <a routerLink="/" class="d-inline-flex link-body-emphasis text-decoration-none ">
       <img class="logo" src="../../../assets/Logo.png" alt="Creator Emporium Logo">
     </a>
@@ -14,8 +14,8 @@
     <li><a routerLink="/" class="nav-link px-2 link-dark" *transloco="let t; read:'nav'">{{t("about")}}</a></li>
   </ul>
 
-  <div class="col-md-auto text-end">
-    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between w-100">
+  <div class="col-md-3 text-end">
+    <div class="d-flex flex-wrap align-items-center justify-content-md-end w-100">
       <app-language-selector class="me-2"></app-language-selector>
       <button routerLink="/login" type="button" class="btn btn-secondary me-2"
         *transloco="let t; read:'nav'">{{t("login")}}</button>
