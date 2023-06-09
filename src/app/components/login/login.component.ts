@@ -22,32 +22,25 @@ export class LoginComponent {
     private activatedRoute: ActivatedRoute
   ) {
     this.loginForm = this.formBuilder.group({
-      username: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
     });
 
     const params = this.activatedRoute.snapshot.queryParams;
     if (params['redirectURL']) {
       this.redirectUrl = params['redirectURL'];
-      console.log('redirection vers: %s', this.redirectUrl);
     }
   }
 
-  ngOnInit() {
-    this.loginForm = this.formBuilder.group({
-      email: [''],
-      password: [''],
-    });
-  }
+  async submitForm() {
+    this.loading = true;
 
-  submitForm() {
-    //this.loading = true;
     const email = this.loginForm.get('email')?.value;
     const password = this.loginForm.get('password')?.value;
-    console.log('email : %s, mdp : %s', email, password);
 
-    this.authService
-      .login(email, password, this.redirectUrl)
-      .subscribe((msg) => (this.errorMsg = msg));
+    this.authService.loginAsync(email, password, '').then(() => {
+      this.errorMsg = "Adresse email ou mot de passe incorrect(s)"
+      this.loading = false;
+    });
   }
 }

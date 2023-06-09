@@ -1,1 +1,34 @@
-<p>register works!</p>
+<div class="form-signin w-100 m-auto d-flex justify-content-center">
+  <form [formGroup]="registerForm" (ngSubmit)="submitForm()">
+    <h1 class="h3 mb-3 fw-normal">S'inscrire</h1>
+    <h2>{{ errorMsg }}</h2>
+
+    <div class="form-floating pb-2">
+      <input formControlName="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Entrez votre email">
+      <label for="floatingInput">Email address</label>
+      <div class="alert alert-danger" [hidden]="isInputValid('email')">Veuillez entrer une adresse email valide</div>
+    </div>
+
+    <div class="form-floating pb-4">
+      <input formControlName="password" type="password" class="form-control" id="password" placeholder="Password">
+      <label for="floatingInput">Password</label>
+      <div class="alert alert-danger" [hidden]="isInputValid('password')">Le mot de passe doit comporter au moins 6 charactères</div>
+    </div>
+
+    <div>
+      <label for="user-type">Je veux m'inscrire sur CreatorCentral pour :</label>
+      <select class="custom-select" id="user-type">
+        <option value="1" (click)="setUserType(1)" selected>acheter des articles</option>
+        <option value="2" (click)="setUserType(2)">vendre mes produits</option>
+      </select>
+    </div>
+
+    <div class="form-floating pb-4" [hidden]="this.userType == 1">
+      <input formControlName="displayName" type="text" class="form-control" id="display-name" aria-describedby="emailHelp" placeholder="Entrez votre nom d'affichage">
+      <label for="floatingInput">Nom d'affichage</label>
+      <small id="emailHelp" class="form-text text-muted">Il s'agit du nom que verront vos clients.</small>
+    </div>
+
+    <button [disabled]="loading || !registerForm.valid" class="btn btn-primary w-100 py-2" type="submit">Créer un compte</button>
+  </form>
+</div>
