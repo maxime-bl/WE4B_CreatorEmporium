@@ -45,7 +45,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
     HttpClientModule,
-    TranslocoRootModule
+    TranslocoRootModule,
     FormsModule,
     ReactiveFormsModule
   ],
