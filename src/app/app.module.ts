@@ -22,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TranslocoRootModule } from './transloco-root.module';
 import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
 import { TRANSLOCO_SCOPE } from '@ngneat/transloco';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,8 @@ import { TRANSLOCO_SCOPE } from '@ngneat/transloco';
     provideStorage(() => getStorage()),
     HttpClientModule,
     TranslocoRootModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     DatabaseService,
