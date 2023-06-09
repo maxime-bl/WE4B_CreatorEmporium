@@ -1,0 +1,12 @@
+.size{
+    height: calc(100vh - 66px);
+}
+
+.scaling {
+    width: 45%;
+    height: auto;
+}
+
+li {
+    list-style-type: none;
+}

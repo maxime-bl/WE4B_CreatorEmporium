@@ -17,6 +17,11 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import { AuthService } from './services/auth.service';
+import { HomeComponent } from './components/home/home.component';
+import { HttpClientModule } from '@angular/common/http';
+import { TranslocoRootModule } from './transloco-root.module';
+import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
+import { TRANSLOCO_SCOPE } from '@ngneat/transloco';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -28,7 +33,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MoneyPipe,
     LoginComponent,
     RegisterComponent,
-    ProductPageComponent
+    ProductPageComponent,
+    HomeComponent,
+    LanguageSelectorComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +44,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
+    HttpClientModule,
+    TranslocoRootModule
     FormsModule,
     ReactiveFormsModule
   ],
