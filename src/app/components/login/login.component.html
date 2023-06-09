@@ -1,8 +1,8 @@
 <main class="form-signin w-100 m-auto d-flex justify-content-center">
-  <form [formGroup]="loginForm" (ngSubmit)="submitForm()" style="width: 300px">
+  <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
     <h2>{{ errorMsg }}</h2>
-    <div class="form-floating py-2">
+    <div class="form-floating pb-2">
       <input
         formControlName="email"
         type="email"
@@ -30,7 +30,7 @@
     </button>
     <p>
       Pas encore de compte ?
-      <a routerLink="/register">Créer un compte sur Creator Emporium</a>
+      <a routerLink="/register" [queryParams]="{'redirectUrl': redirectUrl}">Créer un compte sur Creator Emporium</a>
     </p>
     <p class="mt-5 mb-3 text-body-secondary">© 2017–2023</p>
   </form>

@@ -7,8 +7,11 @@ import {
   where,
   getDocs,
   getDoc,
+  setDoc,
+  doc,
   getFirestore,
   QuerySnapshot,
+  DocumentSnapshot,
 } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 import { Product, ProductData } from '../classes/product';
@@ -17,7 +20,7 @@ import { Observable, from, map } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class DatabaseService {
+export default class DatabaseService {
   db: Firestore;
   app: FirebaseApp;
 
@@ -26,8 +29,12 @@ export class DatabaseService {
     this.db = getFirestore(this.app);
   }
 
-  getAppRef(): FirebaseApp { 
+  getAppRef(): FirebaseApp {
     return this.app;
+  }
+
+  getDbRef(): Firestore {
+    return this.db;
   }
 
   /* Getters functions */
@@ -39,8 +46,8 @@ export class DatabaseService {
     const querySnapshotPromise = getDocs(q);
 
     return from(querySnapshotPromise).pipe(
-      map((querySnapshot : QuerySnapshot) => {
-        const doc = querySnapshot.docs[0]
+      map((querySnapshot: QuerySnapshot) => {
+        const doc = querySnapshot.docs[0];
         const data = doc.data() as ProductData;
         const product = new Product(
           doc.id,
@@ -51,15 +58,25 @@ export class DatabaseService {
         );
         return product;
       })
-    )
-    
+    );
   }
 
+  async getDisplayName(uid: string) : Promise<string>{
+    return getDoc(doc(this.db, 'sellers', uid)).then(
+      (docSnapshot: DocumentSnapshot) => {
+        if (docSnapshot.exists()) {
+          return docSnapshot.data()['displayName'];
+        } else {
+          return '';
+        }
+      }
+    );
+  }
 
   getAllProducts(): Observable<Product[]> {
     const productsRef = collection(this.db, 'products');
     const querySnapshotPromise = getDocs(productsRef);
-  
+
     return from(querySnapshotPromise).pipe(
       map((querySnapshot: QuerySnapshot) => {
         const products: Product[] = [];
@@ -77,5 +94,28 @@ export class DatabaseService {
         return products;
       })
     );
+  }
+
+  async addSeller(uid: string, displayName: string){
+    try {
+      await setDoc(doc(this.db, 'sellers', uid), {
+        'displayName' : displayName
+      })
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async checkDisplayNameAvailability(displayName: string): Promise<boolean>{
+    const sellersRef = collection(this.db, 'sellers');
+    const q = query(sellersRef, where("displayName", "==", displayName));
+
+    const querySnapshot = await getDocs(q);
+
+    if(querySnapshot.empty){
+      return true;
+    } else {
+      throw new Error("Display name already used");
+    }
   }
 }
