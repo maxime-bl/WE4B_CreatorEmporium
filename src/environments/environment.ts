@@ -1,4 +1,5 @@
 export const environment = {
+  baseUrl: 'http://localhost:4200',
   firebase: {
     projectId: 'we4bcreatoremporium',
     appId: '1:542645259589:web:1dbb3a44fab617f265422c',

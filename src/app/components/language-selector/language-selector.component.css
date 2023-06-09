@@ -1,0 +1,17 @@
+.btn-lang {
+    background: none;
+    border: none;
+    width: 35px;
+    height: 35px;
+}
+
+.scale-lang {
+    width: auto;
+    height: 22px;
+    border-radius: 100%;
+}
+
+.text-lang {
+    font-size: 15px;
+    font-weight: lighter;
+}
