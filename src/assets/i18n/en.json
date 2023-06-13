@@ -28,5 +28,27 @@
         "text10": "An Inspiring Community:",
         "text11": "Join the Creator Emporium community and connect with other DIY enthusiasts. Share your creations, exchange ideas, ask questions, and find inspiration for your next projects. Our community is a warm and supportive place where you can feel encouraged and supported.",
         "text12": "Whether you're looking for a new hobby, a unique gift, or simply a rewarding DIY experience, Creator Emporium is here to accompany you on your creative journey. Browse our online store today and let your imagination come to life with our exceptional DIY kits!"
+    },
+    "login": {
+        "title": "Log-in:",
+        "email": "E-mail",
+        "passwd": "Password",
+        "button": "Log-in",
+        "reg_question": "Don't have an account yet?",
+        "register": "Sign-up"
+    },
+    "register": {
+        "title": "Register",
+        "email": "Email Address",
+        "email_error": "Please enter a valid email address",
+        "passwd": "Password",
+        "pwd_error": "The password must be at least 6 characters long",
+        "button": "Register",
+        "choices": "I want to register on CreatorCentral for:",
+        "choice1": "buying articles",
+        "choice2": "selling my products",
+        "nickname": "Display Name",
+        "nick_desc": "This is the name that your customers will see.",
+        "register": "Create an account"
     }
 }

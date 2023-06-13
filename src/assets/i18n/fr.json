@@ -28,5 +28,26 @@
         "text10": "Une communauté inspirante:",
         "text11": "Rejoignez la communauté Creator Emporium et connectez-vous avec d'autres passionnés de DIY. Partagez vos réalisations, échangez des idées, posez des questions et trouvez l'inspiration pour vos prochains projets. Notre communauté est un lieu d'échange chaleureux où vous pourrez vous sentir soutenu et encouragé.",
         "text12": "Que vous soyez à la recherche d'un nouveau hobby, d'un cadeau unique ou simplement d'une expérience de bricolage gratifiante, Creator Emporium est là pour vous accompagner dans votre parcours créatif. Parcourez notre boutique en ligne dès aujourd'hui et laissez votre imagination prendre vie grâce à nos kits de DIY exceptionnels!"
+    },
+    "login": {
+        "title": "Connectez-vous :",
+        "email": "Adresse mail",
+        "passwd": "Mot de passe",
+        "button": "Se connecter",
+        "reg_question": "Pas encore de compte ?",
+        "register": "Créer un compte"
+    },
+    "register": {
+        "title": "S'inscrire",
+        "email": "Adresse mail",
+        "email_error": "Veuillez entrer une adresse email valide",
+        "passwd": "Mot de passe",
+        "pwd_error": "Le mot de passe doit comporter au moins 6 charactères",
+        "button": "S'inscrire",
+        "choices": "Je veux m'inscrire sur CreatorCentral pour :",
+        "choice1": "acheter des articles",
+        "choice2": "vendre mes produits",
+        "nickname": "Nom d'affichage",
+        "nick_desc": "Il s'agit du nom que verront vos clients."
     }
 }
