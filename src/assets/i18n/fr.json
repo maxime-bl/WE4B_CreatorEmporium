@@ -8,11 +8,25 @@
         "login": "Se connecter",
         "signup": "S'inscrire"
     },
-
     "home": {
         "title": "Créez sans limites avec Creator Emporium",
         "subtitle": "L'atelier de vos rêves à portée de clics !",
         "m_info": "Plus d'informations",
         "market": "Produits"
+    },
+    "m_info": {
+        "title": "Bienvenue sur Creator Emporium - Votre boutique en ligne de kits de DIY",
+        "text1": "Bienvenue sur Creator Emporium, l'endroit idéal pour tous les passionnés de DIY ! Nous sommes une boutique en ligne spécialisée dans la vente de kits de bricolage qui vous permettent de laisser libre cours à votre créativité. Que vous soyez débutant ou expert, notre vaste sélection de kits saura satisfaire toutes vos envies de création. Voici ce que vous pouvez attendre en choisissant Creator Emporium :",
+        "text2": "Des kits de DIY pour tous les niveaux:",
+        "text3": "Que vous souhaitiez vous initier à une nouvelle technique ou relever un défi plus avancé, nous avons des kits adaptés à tous les niveaux de compétence. Nos packs sont soigneusement conçus avec des instructions claires et des matériaux de qualité pour vous assurer une expérience de bricolage réussie.",
+        "text4": "Une diversité de projets passionnants:",
+        "text5": "Explorez notre vaste gamme de kits de bricolage dans différents domaines tels que la couture, la décoration, la bijouterie, la peinture et bien d'autres encore. Que vous préfériez créer des objets pratiques ou des pièces décoratives uniques, nous avons le kit parfait pour vous.",
+        "text6": "La commodité de tout-en-un:",
+        "text7": "Nos kits sont conçus pour vous offrir tout ce dont vous avez besoin pour réaliser votre projet. Fini le temps perdu à chercher les matériaux nécessaires ! Avec Creator Emporium, vous recevrez un ensemble complet comprenant les fournitures, les outils et les instructions détaillées, vous permettant de vous lancer sans attendre.",
+        "text8": "Des matériaux de qualité:",
+        "text9": "Nous attachons une grande importance à la qualité de nos produits. Tous nos kits sont confectionnés avec des matériaux durables et sélectionnés avec soin, vous garantissant des résultats durables et esthétiques. Nous veillons à ce que chaque composant de nos kits réponde à nos normes élevées.",
+        "text10": "Une communauté inspirante:",
+        "text11": "Rejoignez la communauté Creator Emporium et connectez-vous avec d'autres passionnés de DIY. Partagez vos réalisations, échangez des idées, posez des questions et trouvez l'inspiration pour vos prochains projets. Notre communauté est un lieu d'échange chaleureux où vous pourrez vous sentir soutenu et encouragé.",
+        "text12": "Que vous soyez à la recherche d'un nouveau hobby, d'un cadeau unique ou simplement d'une expérience de bricolage gratifiante, Creator Emporium est là pour vous accompagner dans votre parcours créatif. Parcourez notre boutique en ligne dès aujourd'hui et laissez votre imagination prendre vie grâce à nos kits de DIY exceptionnels!"
     }
 }

@@ -8,11 +8,25 @@
         "login": "Login",
         "signup": "Sign-up"
     },
-
     "home": {
         "title": "Unleash your creativity with Creator Emporium",
         "subtitle": "The ultimate source of DIY kits!",
         "m_info": "Learn more",
         "market": "Market"
+    },
+    "m_info": {
+        "title": "Welcome to Creator Emporium - Your Online DIY Kit Store",
+        "text1": "Welcome to Creator Emporium, the perfect place for all DIY enthusiasts! We are an online store specializing in the sale of DIY kits that allow you to unleash your creativity. Whether you're a beginner or an expert, our wide selection of kits will satisfy all your creative desires. Here's what you can expect when choosing Creator Emporium:",
+        "text2": "DIY Kits for All Levels:",
+        "text3": "Whether you want to learn a new technique or take on a more advanced challenge, we have kits suitable for all skill levels. Our packs are carefully designed with clear instructions and quality materials to ensure a successful DIY experience.",
+        "text4": "A Variety of Exciting Projects:",
+        "text5": "Explore our extensive range of DIY kits in various areas such as sewing, home decor, jewelry making, painting, and much more. Whether you prefer to create practical items or unique decorative pieces, we have the perfect kit for you.",
+        "text6": "The Convenience of All-in-One:",
+        "text7": "Our kits are designed to provide you with everything you need to complete your project. No more time wasted searching for necessary materials! With Creator Emporium, you'll receive a comprehensive set including supplies, tools, and detailed instructions, allowing you to get started right away.",
+        "text8": "Quality Materials:",
+        "text9": "We prioritize the quality of our products. All our kits are made with durable and carefully selected materials, ensuring long-lasting and aesthetic results. We ensure that every component of our kits meets our high standards.",
+        "text10": "An Inspiring Community:",
+        "text11": "Join the Creator Emporium community and connect with other DIY enthusiasts. Share your creations, exchange ideas, ask questions, and find inspiration for your next projects. Our community is a warm and supportive place where you can feel encouraged and supported.",
+        "text12": "Whether you're looking for a new hobby, a unique gift, or simply a rewarding DIY experience, Creator Emporium is here to accompany you on your creative journey. Browse our online store today and let your imagination come to life with our exceptional DIY kits!"
     }
 }

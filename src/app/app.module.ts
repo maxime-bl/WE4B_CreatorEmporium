@@ -23,6 +23,7 @@ import { TranslocoRootModule } from './transloco-root.module';
 import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
 import { TRANSLOCO_SCOPE } from '@ngneat/transloco';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MoreInfoComponent } from './components/more-info/more-info.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RegisterComponent,
     ProductPageComponent,
     HomeComponent,
-    LanguageSelectorComponent
+    LanguageSelectorComponent,
+    MoreInfoComponent
   ],
   imports: [
     BrowserModule,
