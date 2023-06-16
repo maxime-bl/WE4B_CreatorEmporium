@@ -1,0 +1,70 @@
+<div class="container mb-4">
+  <h1>Ajout de produit</h1>
+  <form [formGroup]="productForm">
+    <div class="form-group">
+      <label for="name">Nom du produit</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        placeholder="Entrez le nom du produit"
+        formControlName="name"
+      />
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea
+        class="form-control"
+        id="description"
+        rows="4"
+        placeholder="Entrez la description du produit"
+        formControlName="description"
+      ></textarea>
+    </div>
+
+    <div>
+      <label for="formFile">Ajouter une image</label>
+      <input class="form-control" type="file" id="formFile" />
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <label for="basic-url">Prix</label>
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control"
+            id="basic-url"
+            placeholder="Entrez un prix"
+            required
+          />
+          <div class="input-group-append">
+            <span class="input-group-text" id="basic-addon3">€</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-group col">
+        <label for="quantiteProduit">Quantité en stock</label>
+        <input
+          type="number"
+          class="form-control"
+          id="quantiteProduit"
+          placeholder="Entrez la quantité disponible"
+          required
+        />
+      </div>
+    </div>
+
+    <div>
+      <label for="category">Catégorie produit</label>
+      <select class="custom-select" id="category">
+        <option value="" selected>Choisissez une catégorie</option>
+        <option *ngFor="let cat of categoryList" value="{{cat.categoryID}}">{{ cat.name }}</option>
+      </select>
+    </div>
+
+    <button type="submit" (click)="submit()" class="btn btn-primary px-4 py-2">
+      Ajouter le produit
+    </button>
+  </form>
+</div>
