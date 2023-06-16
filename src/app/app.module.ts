@@ -27,6 +27,8 @@ import { MarketComponent } from './components/market/market.component';
 import { FiltersComponent } from './components/filters/filters.component';
 import { MoreInfoComponent } from './components/more-info/more-info.component';
 import { NewProductComponent } from './components/new-product/new-product.component';
+import { StorageService } from './services/storage.service';
+import { FirebaseService } from './services/firebase.service';
 
 
 @NgModule({
@@ -59,8 +61,10 @@ import { NewProductComponent } from './components/new-product/new-product.compon
     ReactiveFormsModule
   ],
   providers: [
+    FirebaseService,
     DatabaseService,
-    AuthService
+    AuthService,
+    StorageService    
   ],
   bootstrap: [AppComponent]
 })

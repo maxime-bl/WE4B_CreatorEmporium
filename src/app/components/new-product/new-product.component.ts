@@ -3,6 +3,10 @@ import { Data } from '@angular/router';
 import DatabaseService from 'src/app/services/database.service';
 import { Category } from 'src/app/classes/category';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { StorageService } from 'src/app/services/storage.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { User } from 'src/app/classes/user';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-new-product',
@@ -10,8 +14,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./new-product.component.css']
 })
 export class NewProductComponent {
-  dbService : DatabaseService;
+
   categoryList: Category[] = []
+  image: File | null = null;
   
   isImageValid = false;
   isPriceValid = false;
@@ -26,29 +31,35 @@ export class NewProductComponent {
     quantity: new FormControl('', [Validators.required])
   })
 
-  constructor(databaseService: DatabaseService){
-    this.dbService = databaseService;
-
+  constructor(private dbService: DatabaseService, private storageService: StorageService, private auth: AuthService){
     this.dbService.getCategories().subscribe((res) => {
       this.categoryList = res;
-    })
-
-
-    
+    })   
   }
 
-  submit() : void {
-    console.log("image valide :", this.isImageValid);
-    console.log("qtté valide :", this.isQuantityValid);
-    console.log("prixvalide :", this.isPriceValid);
-    
-    console.log("Form valide : ", this.productForm.valid)
 
+  async submit() {
+    if (this.isFormValid()){
+      const name = this.productForm.get("name")?.value;
+      const description = this.productForm.get("description")?.value;
+      const price = Number(this.productForm.get("price")?.value);
+      const quantity = Number(this.productForm.get("quantity")?.value);
+      const categoryID = this.productForm.get("category")?.value;
+      const seller = this.auth.getCurrentUser()?.displayName;
+
+   
+      
+
+      this.dbService.addProduct(name!, description!, price!, quantity!, categoryID!, this.image!, seller!);
+    }
   }
 
   onFileSelected(event: any) {
     const file = event.target.files[0];
     this.isImageValid = this.productForm.get('imgFile')?.value != '' && ['image/jpeg', 'image/jpg', 'image/png'].includes(file.type)
+    if (this.isImageValid){
+      this.image = file;
+    }
   }
 
   onQuantityChanged(){
