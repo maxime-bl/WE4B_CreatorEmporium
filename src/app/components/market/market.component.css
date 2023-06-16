@@ -1,0 +1,5 @@
+.filters-container{
+    border-radius: 0.375rem;
+    background-color: var(--ce-secondary);
+    width: 300px;
+}

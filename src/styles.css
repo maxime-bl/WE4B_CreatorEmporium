@@ -43,7 +43,7 @@ body{
 
 .btn-primary{
     background-color: var(--ce-primary);
-    color: var(--ce-bg);
+    color: white;
     font-weight: 600;
     border-width: 0;
 }
@@ -56,6 +56,23 @@ body{
 .btn-primary:not(:disabled):not(:disabled):active{
     background-color: var(--ce-primary-active);
     color: var(--ce-bg);
+}
+
+.btn-outline-primary{
+    background-color: none !important;
+    color: var(--ce-primary);
+    font-weight: 600;
+    border-color: var(--ce-primary);
+}
+
+.btn-outline-primary:hover{
+    background-color: var(--ce-primary-hover);
+    border-color: var(--ce-primary-hover);
+}
+
+.btn-outline-primary:not(:disabled):not(:disabled):active{
+    background-color: var(--ce-primary-active);
+    border-color: var(--ce-primary-active);
 }
 
 /* Secondary button */
@@ -76,7 +93,7 @@ body{
     color: black;
 }
 
-/* Lgiht button */
+/* Light button */
 
 .btn-light{
     background-color: var(--ce-bg);
