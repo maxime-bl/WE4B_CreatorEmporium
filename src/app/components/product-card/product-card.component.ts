@@ -10,7 +10,7 @@ import DatabaseService from 'src/app/services/database.service';
 })
 
 export class ProductCardComponent{
-  @Input() product: Product = new Product("","", 0,"","");
+  @Input() product: Product = new Product();
   
   constructor(){
   }
