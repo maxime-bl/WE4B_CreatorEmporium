@@ -38,7 +38,7 @@
         "register": "Sign-up"
     },
     "register": {
-        "title": "Register",
+        "title": "Register:",
         "email": "Email Address",
         "email_error": "Please enter a valid email address",
         "passwd": "Password",

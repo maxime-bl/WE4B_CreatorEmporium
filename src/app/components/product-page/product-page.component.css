@@ -1,0 +1,29 @@
+.prd-name {
+    
+}
+
+.prd-price {
+
+}
+
+.prd-image {
+
+}
+
+.prd-seller {
+
+}
+
+.size {
+    width: 80vw !important;
+}
+
+.img-size {
+    max-width: 30vw !important;
+}
+
+.btn-modal {
+    padding: 0;
+    font-size: 15px !important;
+    color: var(--ce-accent);
+}

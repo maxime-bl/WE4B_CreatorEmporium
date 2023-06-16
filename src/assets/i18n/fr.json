@@ -38,7 +38,7 @@
         "register": "Créer un compte"
     },
     "register": {
-        "title": "S'inscrire",
+        "title": "S'inscrire :",
         "email": "Adresse mail",
         "email_error": "Veuillez entrer une adresse email valide",
         "passwd": "Mot de passe",
