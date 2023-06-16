@@ -26,6 +26,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MarketComponent } from './components/market/market.component';
 import { FiltersComponent } from './components/filters/filters.component';
 import { MoreInfoComponent } from './components/more-info/more-info.component';
+import { CartComponent } from './components/cart/cart.component';
 
 
 @NgModule({
@@ -41,8 +42,9 @@ import { MoreInfoComponent } from './components/more-info/more-info.component';
     HomeComponent,
     LanguageSelectorComponent,
     MarketComponent,
-    FiltersComponent
-    MoreInfoComponent
+    FiltersComponent,
+    MoreInfoComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

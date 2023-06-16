@@ -16,6 +16,8 @@
 
   <div class="col-md-3 text-end">
     <div class="d-flex flex-nowrap align-items-center justify-content-md-end w-100">
+      <button routerLink="/cart" type="button" class="btn btn-secondary me-4"
+        *transloco="let t; read:'nav'">{{t("cart")}}</button>
       <app-language-selector class="me-2"></app-language-selector>
       <button routerLink="/login" type="button" class="btn btn-secondary me-2"
         *transloco="let t; read:'nav'">{{t("login")}}</button>

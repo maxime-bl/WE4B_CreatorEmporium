@@ -7,7 +7,8 @@ export class Product {
     public price: number = 0,
     public quantity: number = 0,
     public description: string = 'undefined',   
-    public imagePath: string = 'https://padletuploads.blob.core.windows.net/prod/338313757/xv9cNVhJOnCldshv-zjMjA/f41906143bc5eb004cac88418b2a97a7.jpeg'
+    public imagePath: string = 'https://padletuploads.blob.core.windows.net/prod/338313757/xv9cNVhJOnCldshv-zjMjA/f41906143bc5eb004cac88418b2a97a7.jpeg',
+    public inCart: boolean = false
   ) {}
 }
 
@@ -20,4 +21,5 @@ export interface ProductData {
   quantity: number;
   description: string;
   imagePath: string;
+  inCart: boolean;
 }

@@ -1,0 +1,11 @@
+<div class="double-columns mb-2">
+    <div class="product-list d-table-cell align-items-center" *ngFor="let prod of products">
+        <app-product-card [product]="prod" width="10%"></app-product-card>
+        <button class="btn btn-outline-primary" (click)="deleteFromCart()">Supprimer du panier</button>
+    </div>
+    <div class="cart-container">
+        <p *ngFor="let prod of products"><b>{{prod.name}}</b>: {{prod.price}}€</p>
+        <hr>
+        <p><b>Total:</b> {{getTotalPrice()}}</p>
+    </div>
+</div>
