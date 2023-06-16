@@ -41,7 +41,7 @@ import { MoreInfoComponent } from './components/more-info/more-info.component';
     HomeComponent,
     LanguageSelectorComponent,
     MarketComponent,
-    FiltersComponent
+    FiltersComponent,
     MoreInfoComponent
   ],
   imports: [
