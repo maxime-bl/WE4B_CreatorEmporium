@@ -10,6 +10,7 @@
         placeholder="Entrez le nom du produit"
         formControlName="name"
       />
+      <p class="error" [hidden]="isInputValid('name')">Le produit doit comporter un nom</p>
     </div>
     <div class="form-group">
       <label for="description">Description</label>
@@ -20,27 +21,38 @@
         placeholder="Entrez la description du produit"
         formControlName="description"
       ></textarea>
+      <p class="error" [hidden]="isInputValid('description')">Le produit doit comporter une description</p>
     </div>
 
     <div>
-      <label for="formFile">Ajouter une image</label>
-      <input class="form-control" type="file" id="formFile" />
+      <label for="imgFile">Ajouter une image</label>
+      <input
+        class="form-control"
+        type="file"
+        id="imgFile"
+        formControlName="imgFile"
+        accept=".png,.jpg,.jpeg"
+        (change)="onFileSelected($event)"
+      />
+      <p class="error" [hidden]="isImageValid || !isTouched('imgFile')">Le produit doit comporter une image (format png, jpg, ou jpeg)</p>
     </div>
 
     <div class="row">
       <div class="col">
-        <label for="basic-url">Prix</label>
+        <label for="price">Prix</label>
         <div class="input-group">
           <input
             type="text"
             class="form-control"
-            id="basic-url"
+            id="price"
             placeholder="Entrez un prix"
-            required
+            formControlName="price"
+            (keyup)="onPriceChanged()"
           />
           <div class="input-group-append">
-            <span class="input-group-text" id="basic-addon3">€</span>
+            <span class="input-group-text">€</span>
           </div>
+          <p class="error" [hidden]="isPriceValid || !isTouched('price')" >Le prix est incorrect</p>
         </div>
       </div>
       <div class="form-group col">
@@ -50,20 +62,31 @@
           class="form-control"
           id="quantiteProduit"
           placeholder="Entrez la quantité disponible"
-          required
+          formControlName="quantity"
+          (change)="onQuantityChanged()"
+          (keyup)="onQuantityChanged()"
         />
+        <p class="error" [hidden]="isQuantityValid || !isTouched('quantity')">La quantité est incorrecte</p>
       </div>
     </div>
 
     <div>
       <label for="category">Catégorie produit</label>
-      <select class="custom-select" id="category">
+      <select class="custom-select" id="category" formControlName="category">
         <option value="" selected>Choisissez une catégorie</option>
-        <option *ngFor="let cat of categoryList" value="{{cat.categoryID}}">{{ cat.name }}</option>
+        <option *ngFor="let cat of categoryList" value="{{ cat.categoryID }}">
+          {{ cat.name }}
+        </option>
       </select>
+      <p class="error" [hidden]="isInputValid('category')">Veuillez sélectionner une catégorie</p>
     </div>
 
-    <button type="submit" (click)="submit()" class="btn btn-primary px-4 py-2">
+    <button
+      type="submit"
+      (click)="submit()"
+      [disabled]="!isFormValid()"
+      class="btn btn-primary px-4 py-2"
+    >
       Ajouter le produit
     </button>
   </form>

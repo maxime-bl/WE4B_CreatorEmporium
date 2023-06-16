@@ -49,3 +49,14 @@ span{
     -moz-appearance: none;
     appearance: none;
 }
+
+.error{
+    color: red;
+    margin: 0;
+    padding-top: 0.4rem;
+    padding-left: 0.1rem;
+}
+
+#price{
+    min-width: 200px;
+}
