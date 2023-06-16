@@ -1,6 +1,6 @@
-<div class="form-signin w-100 m-auto d-flex justify-content-center">
-  <form [formGroup]="registerForm" (ngSubmit)="submitForm()">
-    <h1 class="h3 mb-3 fw-normal" *transloco="let t; read:'register'">{{t("title")}}</h1>
+<div class="form-signin w-100 m-auto d-flex justify-content-center align-items-center height">
+  <form class="background p-4 w-25" [formGroup]="registerForm" (ngSubmit)="submitForm()">
+    <h1 class="h3 mb-3 fw-normal title" *transloco="let t; read:'register'">{{t("title")}}</h1>
     <h2>{{ errorMsg }}</h2>
 
     <div class="form-floating pb-2">
@@ -15,7 +15,7 @@
       <div class="alert alert-danger" [hidden]="isInputValid('password')" *transloco="let t; read:'register'">{{t("pwd_error")}}</div>
     </div>
 
-    <div>
+    <div class="pb-2">
       <label for="user-type" *transloco="let t; read:'register'">{{t("choices")}}</label>
       <select class="custom-select" id="user-type">
         <option value="1" (click)="setUserType(1)" selected *transloco="let t; read:'register'">{{t("choice1")}}</option>
@@ -29,6 +29,6 @@
       <small id="emailHelp" class="form-text text-muted" *transloco="let t; read:'register'">{{t("nick_desc")}}</small>
     </div>
 
-    <button [disabled]="loading || !registerForm.valid" class="btn btn-primary w-100 py-2" type="submit" *transloco="let t; read:'register'">{{t("button")}}</button>
+    <button [disabled]="loading || !registerForm.valid" class="btn btn-tertiary w-100 py-2" type="submit" *transloco="let t; read:'register'">{{t("button")}}</button>
   </form>
 </div>

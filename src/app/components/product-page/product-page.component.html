@@ -1,6 +1,46 @@
-<div *ngIf="!isLoading" class="container">
-    <h1>{{ product.name }}</h1>
-    <h2>{{ product.price | money }}</h2>
-    <img src="{{ product.imagePath }}">
-    <p>Vendu par {{ product.seller }}</p>
+<div class="d-flex flex-column-2 mx-auto mt-4 px-0 size">
+    <div *ngIf="!isLoading" class="container d-flex flex-column mx-0 px-4 pt-4 w-50">
+        <img class="prd-image img-size" src="{{ product.imagePath }}">
+    </div>
+    <div class="d-flex flex-column-2 w-100">
+        <div class="w-100">
+            <div *ngIf="!isLoading" class="container d-flex flex-column mx-0 pe-4 pt-4 w-100">
+                <h1 class="prd-name">{{ product.name }}</h1>
+                <p class="prd-seller">Vendu par {{ product.seller }}</p>
+                <!-- <p class="prd-seller">{{ product.description }}</p> -->
+            </div>
+        </div>
+        <div class="pe-4 pt-4 w-100">
+            <div class="card mb-4 rounded-3 shadow-sm w-100">
+                <div class="card-header py-3">
+                    <h3 class="card-title pricing-card-title">{{ product.price | money}}
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <!-- <p class="prd-seller">Vendu par {{ product.quantity }}</p> -->
+                    <p class="prd-seller">Il reste 22 produits.</p>
+                    <button type="button" class="btn btn-modal mb-2" data-toggle="modal" data-target="#CGV-Modal">Lire les
+                        conditions générales de ventes.</button>
+                    <button type="button" class="w-100 btn btn-lg btn-primary mb-2">Add to cart</button>
+                    <button type="button" class="w-100 btn btn-lg btn-primary">Buy now</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<div id="CGV-Modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content rounded-3 shadow">
+            <div class="modal-body p-4 text-center">
+                <h5 class="mb-0">Enable this setting?</h5>
+                <p class="mb-0">You can always change your mind in your account settings.</p>
+            </div>
+            <div class="modal-footer flex-nowrap p-0">
+                <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 rounded-0"
+                    data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- TODO ajouter les commentaires ici -->

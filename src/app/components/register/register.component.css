@@ -19,3 +19,33 @@
     -moz-appearance: none;
     appearance: none;
 }
+
+.height {
+  height: calc(100vh - 66px) !important;
+}
+
+.background {
+  background-color: var(--ce-secondary);
+  border-radius: 0.375rem;
+}
+
+.btn-tertiary {
+  background-color: var(--ce-accent) !important;
+  color: var(--ce-bg) !important;
+  font-weight: 600 !important;
+  font-size: large !important;
+}
+
+.btn-tertiary:hover {
+  background-color: rgb(39, 92, 73) !important;
+  color: var(--ce-bg) !important;
+}
+
+.btn-tertiary:not(:disabled):not(:disabled):active{
+  background-color: rgb(29, 69, 55) !important;
+  color: var(--ce-bg) !important;
+}
+
+.title {
+  font-weight: 600 !important;
+}
