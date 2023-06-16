@@ -25,6 +25,8 @@ import { TRANSLOCO_SCOPE } from '@ngneat/transloco';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MarketComponent } from './components/market/market.component';
 import { FiltersComponent } from './components/filters/filters.component';
+import { MoreInfoComponent } from './components/more-info/more-info.component';
+
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { FiltersComponent } from './components/filters/filters.component';
     LanguageSelectorComponent,
     MarketComponent,
     FiltersComponent
+    MoreInfoComponent
   ],
   imports: [
     BrowserModule,

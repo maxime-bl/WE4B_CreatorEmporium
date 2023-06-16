@@ -39,7 +39,7 @@ export class LoginComponent {
     const password = this.loginForm.get('password')?.value;
 
     this.authService.loginAsync(email, password, '').then(() => {
-      this.errorMsg = "Adresse email ou mot de passe incorrect(s)"
+      this.errorMsg = "Incorrect email address or password."
       this.loading = false;
     });
   }
