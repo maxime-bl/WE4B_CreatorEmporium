@@ -33,7 +33,6 @@ import { CommentComponent } from './components/comment/comment.component';
 import { CommentListComponent } from './components/comment-list/comment-list.component';
 import { CommentFormComponent } from './components/comment-form/comment-form.component';
 import { TransactionHistoryComponent } from './components/transaction-history/transaction-history.component';
-import { TransactionComponent } from './components/transaction/transaction.component';
 
 
 @NgModule({
@@ -55,8 +54,7 @@ import { TransactionComponent } from './components/transaction/transaction.compo
     CommentComponent,
     CommentListComponent,
     CommentFormComponent,
-    TransactionHistoryComponent,
-    TransactionComponent
+    TransactionHistoryComponent
   ],
   imports: [
     BrowserModule,
