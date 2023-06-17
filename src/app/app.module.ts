@@ -29,6 +29,8 @@ import { MoreInfoComponent } from './components/more-info/more-info.component';
 import { NewProductComponent } from './components/new-product/new-product.component';
 import { StorageService } from './services/storage.service';
 import { FirebaseService } from './services/firebase.service';
+import { CommentComponent } from './components/comment/comment.component';
+import { CommentListComponent } from './components/comment-list/comment-list.component';
 
 
 @NgModule({
@@ -46,7 +48,9 @@ import { FirebaseService } from './services/firebase.service';
     MarketComponent,
     FiltersComponent,
     MoreInfoComponent,
-    NewProductComponent
+    NewProductComponent,
+    CommentComponent,
+    CommentListComponent
   ],
   imports: [
     BrowserModule,
