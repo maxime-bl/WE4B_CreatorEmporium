@@ -1,0 +1,26 @@
+<form [formGroup]="commentForm">
+    <div class="form-group">
+        <label for="title">Titre</label>
+        <input type="text" class="form-control" id="title" placeholder="Entrez le titre du commentaire"
+            formControlName="title">
+        <p class="error" [hidden]="isInputValid('title')">Le commentaire doit comporter un titre</p>
+    </div>
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control" id="text" rows="4" placeholder="Entrez la description du produit"
+            formControlName="text"></textarea>
+    </div>
+    <div class="form-group">
+    <label for="quantiteProduit">Quantité en stock</label>
+        <input
+          type="number"
+          class="form-control"
+          id="quantiteProduit"
+          placeholder="Entrez la quantité disponible"
+          formControlName="quantity"
+          (change)="onGradeChanged()"
+          (keyup)="onGradeChanged()"
+        />
+        <p class="error" [hidden]="isGradeValid || !isTouched('grade')">La note est incorrecte</p>
+      </div>
+</form>
