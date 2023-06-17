@@ -51,5 +51,9 @@
         "nickname": "Display Name",
         "nick_desc": "This is the name that your customers will see.",
         "register": "Create an account"
+    },
+    "cart": {
+        "total": "Total:",
+        "delete": "Remove from cart"
     }
 }

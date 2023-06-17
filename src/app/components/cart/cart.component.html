@@ -1,11 +1,17 @@
-<div class="double-columns mb-2">
-    <div class="product-list d-table-cell align-items-center" *ngFor="let prod of products">
-        <app-product-card [product]="prod" width="10%"></app-product-card>
-        <button class="btn btn-outline-primary" (click)="deleteFromCart()">Supprimer du panier</button>
+<div class="d-inline-flex col-12 col-md-10 align-items-start">
+    <div class="col-md-10 col-2">
+        <div class="product-list d-inline-flex flex-wrap p-1 row mb-5 mt-3"
+        *ngFor="let prod of products">
+            <app-product-card [product]="prod" width="20%"></app-product-card>
+            <button class="btn btn-outline-primary p-3" (click)="deleteFromCart()" *transloco="let t; read:'cart'">{{t("delete")}}</button>
+        </div>
     </div>
-    <div class="cart-container">
-        <p *ngFor="let prod of products"><b>{{prod.name}}</b>: {{prod.price}}€</p>
+    <div class="cart-container d-flex flex-wrap me-1 p-3 col-6 col-md-4">
+        <div>
+            <p *ngFor="let prod of products"><b>{{prod.name}}</b>: {{prod.price}}€</p>
+            <br>
+        </div>
         <hr>
-        <p><b>Total:</b> {{getTotalPrice()}}</p>
+        <p *transloco="let t; read:'cart'"><b>{{t("total")}}</b> {{getTotalPrice()}}</p>
     </div>
 </div>

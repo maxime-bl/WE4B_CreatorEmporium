@@ -7,17 +7,14 @@
     gap: var(--gap) var(--gap);
     margin: 0 auto;
     /* grid-template-columns: repeat(auto-fit, 20rem); */
-    grid-template-columns: repeat(auto-fit, var(--card-width));
-    width: 60%;
+    grid-template-columns: repeat(1, var(--card-width));
+    width: 30%
 }
 
 .cart-container{
-    padding: 3%;
-    margin: 5%;
     background-color: var(--ce-secondary);
-    border-radius: 10%;
-    height: auto;
-    width: 30%
+    border-radius: 5%;
+    height: 600px !important;
 }
 
 .double-columns{

@@ -50,5 +50,9 @@
         "choice2": "vendre mes produits",
         "nickname": "Nom d'affichage",
         "nick_desc": "Il s'agit du nom que verront vos clients."
+    },
+    "cart": {
+        "total": "Total :",
+        "delete": "Supprimer du panier"
     }
 }

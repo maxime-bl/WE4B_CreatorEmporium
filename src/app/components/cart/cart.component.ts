@@ -25,7 +25,7 @@ export class CartComponent {
     this.products.forEach(prod => {
       r += prod.price;
     });
-    return r;
+    return r.toFixed(2);
   }
 
   deleteFromCart(){
