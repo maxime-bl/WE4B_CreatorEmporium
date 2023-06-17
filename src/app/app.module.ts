@@ -31,6 +31,7 @@ import { StorageService } from './services/storage.service';
 import { FirebaseService } from './services/firebase.service';
 import { CommentComponent } from './components/comment/comment.component';
 import { CommentListComponent } from './components/comment-list/comment-list.component';
+import { CommentFormComponent } from './components/comment-form/comment-form.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { CommentListComponent } from './components/comment-list/comment-list.com
     MoreInfoComponent,
     NewProductComponent,
     CommentComponent,
-    CommentListComponent
+    CommentListComponent,
+    CommentFormComponent
   ],
   imports: [
     BrowserModule,
