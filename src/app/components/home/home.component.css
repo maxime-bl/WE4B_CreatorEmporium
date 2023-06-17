@@ -9,7 +9,8 @@
 }
 
 .position {
-    top: 50%;
+    position: relative;
+    top: 10vh;
 }
 
 .img-hor {

@@ -6,7 +6,7 @@
         <div class="w-100">
             <div *ngIf="!isLoading" class="container d-flex flex-column mx-0 pe-4 pt-4 w-100">
                 <h1 class="prd-name">{{ product.name }}</h1>
-                <p class="prd-seller">Vendu par {{ product.seller }}</p>
+                <p class="prd-seller" *transloco="let t; read:'product_page'">{{t("seller")}} {{ product.seller }}.</p>
                 <!-- <p class="prd-seller">{{ product.description }}</p> -->
             </div>
         </div>
@@ -17,12 +17,11 @@
                     </h3>
                 </div>
                 <div class="card-body">
-                    <!-- <p class="prd-seller">Vendu par {{ product.quantity }}</p> -->
-                    <p class="prd-seller">Il reste 22 produits.</p>
-                    <button type="button" class="btn btn-modal mb-2" data-bs-toggle="modal" data-bs-target="#CGV-Modal">Lire les
-                        conditions générales de ventes.</button>
-                    <button type="button" class="w-100 btn btn-lg btn-primary mb-2">Add to cart</button>
-                    <button type="button" class="w-100 btn btn-lg btn-primary">Buy now</button>
+                    <!-- <p class="prd-seller">Il reste {{ product.quantity }} produits.</p> -->
+                    <p class="prd-seller" *transloco="let t; read:'product_page'">{{t('stock1')}} 22 {{t('stock2')}}.</p>
+                    <button type="button" class="btn btn-modal mb-2" data-bs-toggle="modal" data-bs-target="#CGV-Modal" *transloco="let t; read:'product_page'">{{t('CGV')}}</button>
+                    <button type="button" class="w-100 btn btn-lg btn-primary mb-2" *transloco="let t; read:'product_page'">{{t('add2cart')}}</button>
+                    <button type="button" class="w-100 btn btn-lg btn-primary" *transloco="let t; read:'product_page'">{{t('buy')}}</button>
                 </div>
             </div>
         </div>
@@ -32,13 +31,21 @@
 <div id="CGV-Modal" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content rounded-3 shadow">
-            <div class="modal-body p-4 text-center">
-                <h5 class="mb-0">Enable this setting?</h5>
-                <p class="mb-0">You can always change your mind in your account settings.</p>
+            <div class="modal-body p-4">
+                <h5 class="mb-0 text-center" *transloco="let t; read:'modal'">{{t('title')}}</h5>
+                <p class="mb-0" *transloco="let t; read:'modal'">{{t('text1')}}</p>
+                <ol class="">
+                    <li *transloco="let t; read:'modal'">{{t('elem1')}}</li>
+                    <li *transloco="let t; read:'modal'">{{t('elem2')}}</li>
+                    <li *transloco="let t; read:'modal'">{{t('elem3')}}</li>
+                    <li *transloco="let t; read:'modal'">{{t('elem4')}}</li>
+                    <li *transloco="let t; read:'modal'">{{t('elem5')}}</li>
+                </ol>
+                <p class="mb-0" *transloco="let t; read:'modal'">{{t('text2')}}</p>
             </div>
             <div class="modal-footer flex-nowrap p-0">
-                <button type="button" class="btn btn-lg btn-link text-decoration-none py-3 m-0 rounded-0"
-                    data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-lg btn-link text-decoration-none w-100 py-3 m-0 rounded-0"
+                    data-bs-dismiss="modal" *transloco="let t; read:'modal'">{{t('button')}}</button>
             </div>
         </div>
     </div>

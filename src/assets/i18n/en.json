@@ -50,5 +50,24 @@
         "nickname": "Display Name",
         "nick_desc": "This is the name that your customers will see.",
         "register": "Create an account"
+    },
+    "product_page": {
+        "seller": "Sold by ",
+        "stock1": "Only ",
+        "stock2": " left",
+        "CGV": "Read the terms and conditions of sale.",
+        "add2cart": "Add to cart",
+        "buy": "Buy now"
+    },
+    "modal": {
+        "title": "General terms and conditions of sale:",
+        "text1": "Before proceeding with your purchase, please carefully review the following terms and conditions:",
+        "elem1": "Product Availability: The availability of the product is subject to change and may vary based on stock levels. We strive to maintain accurate inventory information, but there is a possibility that an item may become temporarily or permanently out of stock. In such cases, we will notify you promptly and provide alternative options or a refund.",
+        "elem2": "Product Descriptions: We make every effort to provide accurate and detailed descriptions of our products. However, please note that product images, colors, and specifications may vary slightly from the actual product due to lighting conditions, monitor settings, or manufacturer updates. We encourage you to read the product details carefully and reach out to our customer support team if you have any specific questions.",
+        "elem3": "Pricing and Payment: Prices listed on our website are subject to change without prior notice. While we strive to maintain accurate pricing information, occasional discrepancies may occur. In the event that a product is listed at an incorrect price, we reserve the right to cancel your order or contact you for further instructions. Please ensure that all payment details provided are accurate and up to date.",
+        "elem4": "Shipping and Delivery: We endeavor to process and ship orders within the specified timeframes. However, please note that shipping times may vary based on your location, the shipping carrier, and any unforeseen circumstances. We cannot guarantee exact delivery dates but will provide you with tracking information to monitor your package's progress. Additional customs fees, duties, or taxes may apply for international orders.",
+        "elem5": "Returns and Refunds: We have a comprehensive returns policy in place to ensure your satisfaction. If you encounter any issues with your purchase, please contact our customer support team within the designated timeframe specified in our return policy. Please note that certain products, such as personalized items or perishable goods, may not be eligible for return.",
+        "text2": "By proceeding with your purchase, you acknowledge that you have read and understood the above terms and conditions. If you have any questions or concerns, please do not hesitate to reach out to our customer support team for further assistance.",
+        "button": "Close"
     }
 }
