@@ -20,20 +20,24 @@ export class TransactionHistoryComponent {
     this.auth.getCurrentUserAsObservable().subscribe(
       res => {
         this.currentUser = res;
+        this.fetchTransactions();
       }
     )
+  }
+
+  fetchTransactions() {
     if (this.currentUser?.isSeller) {
       this.isSeller = true;
       this.dbService.getTransactionBySellerID(this.currentUser.uid).subscribe((transactions) => {
         this.transactions = transactions;
         this.isLoading = false;
-      })
-    } else if (this.currentUser){
+      });
+    } else if (this.currentUser) {
       this.isSeller = false;
       this.dbService.getTransactionByUserID(this.currentUser.uid).subscribe((transactions) => {
         this.transactions = transactions;
         this.isLoading = false;
-      })
+      });
     }
   }
 }

@@ -1,6 +1,7 @@
 <div class="transaction-list mx-auto">
-    <h4 *ngIf="isSeller == true">Produits vendus :</h4>
-    <h4 *ngIf="isSeller == false">Vous avez achetés :</h4>
+    <h4 *ngIf="transactions.length == 0"> Aucun historique </h4>
+    <h4 *ngIf="transactions.length > 0 && isSeller == true">Produits vendus :</h4>
+    <h4 *ngIf="transactions.length > 0 && isSeller == false">Vous avez achetés :</h4>
 </div>
 <table class="table table-hover table-bordered">
     <thead>
@@ -14,7 +15,15 @@
         </tr>
     </thead>
     <tbody>
-        <app-transaction *ngFor="let tr of transactions" [transaction]="tr"></app-transaction>
+        <ng-container *ngIf="transactions.length > 0">
+            <tr *ngFor="let tr of transactions">
+                <td>{{ tr.date.toDate() | date:'medium' }}</td>
+                <td>{{ tr.productName }}</td>
+                <td>{{ tr.quantity }}</td>
+                <td>{{ tr.sellerName }}</td>
+                <td>{{ tr.username }}</td>
+                <td>{{ tr.totalPrice }}</td>
+            </tr>
+        </ng-container>    
     </tbody>
 </table>
-<p *ngIf="transactions.length == 0"> Aucun hystorique </p>
