@@ -84,10 +84,31 @@
     <button
       type="submit"
       (click)="submit()"
-      [disabled]="!isFormValid()"
-      class="btn btn-primary px-4 py-2"
+      [disabled]="!isFormValid() || isLoading"
+      class="btn btn-primary px-4 py-2 mt-4"
     >
       Ajouter le produit
     </button>
   </form>
+
+  <dialog id="successDialog" #successDialog>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Votre produit a bien été ajouté !</h5>
+        <p class="card-text">Vous pouvez dès maintenant consulter la page de votre produit en cliquant sur le bouton ci-dessous</p>
+        <button class="btn btn-primary me-3" [routerLink]="['/product', productID]">Voir la page du produit</button>
+        <button class="btn btn-secondary" routerLink="/">Revenir à l'accueil</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="errorDialog" #errorDialog>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Une erreur s'est produite</h5>
+        <p class="card-text">Votre produit n'a pas pu être ajouté. Veuillez réessayer plus tard</p>
+        <button class="btn btn-primary" onclick="errorDialog.close()">Fermer</button>
+      </div>
+    </div>
+  </dialog>
 </div>

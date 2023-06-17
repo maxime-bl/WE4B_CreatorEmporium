@@ -13,18 +13,12 @@ label{
     padding-bottom: 0.2rem;
 }
 
-input, textarea, select{
+input, textarea, select, span, .btn{
     border: 1px solid black !important;
 }
 
-span{
-    border: 1px solid black;
-}
-
-.btn-primary{
+.btn {
     font-size: 1.2rem;
-    margin-top: 1rem;
-    border: 1px solid black;
     box-shadow: 0.15rem 0.15rem 0 0 rgb(0, 0, 0);
 }
 
@@ -59,4 +53,23 @@ span{
 
 #price{
     min-width: 200px;
+}
+
+dialog{
+    background: none;
+    border: none;
+}
+
+dialog::backdrop{
+    background-color: rgba(0, 0, 0, 0.542);
+}
+
+.card{
+    background-color: var(--ce-bg);
+    border: 2px black solid;
+    max-width: 500px;
+}
+
+.card-header{
+    border-bottom: 1px black solid;
 }

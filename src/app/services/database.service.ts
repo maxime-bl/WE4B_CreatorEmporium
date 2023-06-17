@@ -45,25 +45,28 @@ export default class DatabaseService {
 
   /* Products functions */
 
-  async addProduct(name: string, description: string, price: number, quantity: number, categoryID: string, image: File, sellerName: string){
+  async addProduct(name: string, description: string, price: number, quantity: number, categoryID: string, image: File, sellerName: string) : Promise<string>{
+    try {
+      const prodRef = await addDoc(collection(this.db, 'products'), {
+        name: name,
+        description: description,
+        price: price,
+        quantity: quantity,
+        categoryID: ["all", categoryID],
+        imagePath: "",
+        seller: sellerName
+      })
 
-    const prodRef = await addDoc(collection(this.db, 'products'), {
-      name: name,
-      description: description,
-      price: price,
-      quantity: quantity,
-      categoryID: ["all", categoryID],
-      imagePath: "",
-      seller: sellerName
-    })
+      const imageURL = await this.storageService.uploadProductImage(prodRef.id, image);
 
-    const imageURL = await this.storageService.uploadProductImage(prodRef.id, image);
+      await updateDoc(prodRef, {
+        imagePath: imageURL
+      });
 
-    await updateDoc(prodRef, {
-      imagePath: imageURL
-    });
-
-    
+      return prodRef.id
+    } catch (error) {
+      throw new Error("Product creation failed")
+    }
   }
 
   getProductById(id: string): Observable<Product> {

@@ -1,12 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Data } from '@angular/router';
 import DatabaseService from 'src/app/services/database.service';
 import { Category } from 'src/app/classes/category';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { StorageService } from 'src/app/services/storage.service';
 import { AuthService } from 'src/app/services/auth.service';
-import { User } from 'src/app/classes/user';
-import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-new-product',
@@ -17,6 +15,8 @@ export class NewProductComponent {
 
   categoryList: Category[] = []
   image: File | null = null;
+  productID = '';
+  isLoading = false;
   
   isImageValid = false;
   isPriceValid = false;
@@ -31,6 +31,9 @@ export class NewProductComponent {
     quantity: new FormControl('', [Validators.required])
   })
 
+  @ViewChild("successDialog") sucessDialog!: ElementRef;
+  @ViewChild("errorDialog") errorDialog!: ElementRef;
+
   constructor(private dbService: DatabaseService, private storageService: StorageService, private auth: AuthService){
     this.dbService.getCategories().subscribe((res) => {
       this.categoryList = res;
@@ -40,6 +43,8 @@ export class NewProductComponent {
 
   async submit() {
     if (this.isFormValid()){
+      this.isLoading=true;
+
       const name = this.productForm.get("name")?.value;
       const description = this.productForm.get("description")?.value;
       const price = Number(this.productForm.get("price")?.value);
@@ -47,14 +52,19 @@ export class NewProductComponent {
       const categoryID = this.productForm.get("category")?.value;
       const seller = this.auth.getCurrentUser()?.displayName;
 
-   
-      
-
-      this.dbService.addProduct(name!, description!, price!, quantity!, categoryID!, this.image!, seller!);
+      this.dbService.addProduct(name!, description!, price!, quantity!, categoryID!, this.image!, seller!).then((res: string)=> {
+        this.productID = res;
+        this.sucessDialog.nativeElement.showModal();
+        this.isLoading = false;
+      }).catch((error) => {
+        console.log(error);
+        this.errorDialog.nativeElement.showModal();
+        this.isLoading = false;
+      })
     }
   }
 
-  onFileSelected(event: any) {
+  onFileSelected(event: any) { 
     const file = event.target.files[0];
     this.isImageValid = this.productForm.get('imgFile')?.value != '' && ['image/jpeg', 'image/jpg', 'image/png'].includes(file.type)
     if (this.isImageValid){
