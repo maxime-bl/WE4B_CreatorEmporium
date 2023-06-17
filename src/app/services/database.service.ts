@@ -15,6 +15,7 @@ import {
   addDoc,
   Query,
   updateDoc,
+  orderBy,
 } from '@angular/fire/firestore';
 
 import { Product, ProductData } from '../classes/product';
@@ -219,8 +220,9 @@ export default class DatabaseService {
   getCategories() : Observable<Category[]> {
     const catRef = collection(this.db, 'categories');
 
+    const q = query(catRef, orderBy("name"));
 
-    return from(getDocs(catRef)).pipe(
+    return from(getDocs(q)).pipe(
       map((querySnapshot: QuerySnapshot) => {
         const categories: Category[] = [];
         querySnapshot.forEach((doc) => {
