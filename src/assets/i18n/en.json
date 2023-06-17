@@ -1,12 +1,14 @@
 {
     "nav": {
         "market": "Market",
-        "features": "Features",
-        "pricing": "Pricing",
-        "qnas": "QNAs",
+        "orders": "My Orders",
+        "cart": "My Cart",
+        "sales": "Sales",
+        "product-management": "My Products",
         "about": "About",
         "login": "Login",
-        "signup": "Sign-up"
+        "signup": "Sign-up",
+        "logout": "Logout"
     },
     "home": {
         "title": "Unleash your creativity with Creator Emporium",

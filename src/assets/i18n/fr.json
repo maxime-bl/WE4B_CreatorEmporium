@@ -1,12 +1,14 @@
 {
     "nav": {
         "market": "Produits",
-        "features": "Fonctionnalités",
-        "pricing": "Tarification",
-        "qnas": "FAQs",
+        "orders": "Mes commandes",
+        "cart": "Mon Panier",
+        "sales": "Ventes",
+        "product-management": "Mes produits",
         "about": "À propos",
         "login": "Se connecter",
-        "signup": "S'inscrire"
+        "signup": "S'inscrire",
+        "logout": "Se déconnecter"
     },
     "home": {
         "title": "Créez sans limites avec Creator Emporium",

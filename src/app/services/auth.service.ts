@@ -19,8 +19,9 @@ import { FirebaseService } from './firebase.service';
 })
 export class AuthService {
   app: FirebaseApp;
-  user : User | null = null;
-  loggedIn : boolean = false
+  user: User | null = null;
+  userObservable = new Subject<User | null>();
+  loggedIn: boolean = false
   router;
 
   constructor(private databaseService: DatabaseService, private firebaseService: FirebaseService, router: Router, private auth: Auth) {
@@ -29,6 +30,8 @@ export class AuthService {
     this.auth = getAuth(this.app); // init Firebase Authentification + get reference
     this.router = router;
 
+
+
     // action lorsque l'utilisateur se connecte/déconnecte
     onAuthStateChanged(this.auth, async (fbUser) => {
       if (fbUser) {
@@ -36,12 +39,14 @@ export class AuthService {
         const isSeller = displayName == '' ? false : true;
 
         this.user = new User(fbUser.uid, fbUser.email, isSeller, displayName)
-    
+
         this.loggedIn = true;
       } else {
         this.user = null;
         this.loggedIn = false;
+
       }
+      this.userObservable.next(this.user);
     });
   }
 
@@ -114,9 +119,9 @@ export class AuthService {
       this.router.navigate([redirectUrl]);
       return '';
     } catch (error) {
-      if (error instanceof FirebaseError){
+      if (error instanceof FirebaseError) {
         return error.message;
-      } else if (error instanceof Error){
+      } else if (error instanceof Error) {
         return error.message;
       } else {
         return "Unknowned error";
@@ -128,11 +133,15 @@ export class AuthService {
     await signOut(this.auth);
   }
 
-  isLoggedIn(): boolean{
+  isLoggedIn(): boolean {
     return this.loggedIn;
   }
 
-  getCurrentUser() : User | null {
+  getCurrentUser(): User | null {
     return this.user;
+  }
+
+  getCurrentUserAsObservable(): Observable<User | null> {
+    return this.userObservable
   }
 }
