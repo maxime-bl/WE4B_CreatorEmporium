@@ -49,5 +49,24 @@
         "choice2": "vendre mes produits",
         "nickname": "Nom d'affichage",
         "nick_desc": "Il s'agit du nom que verront vos clients."
+    },
+    "product_page": {
+        "seller": "Vendu par ",
+        "stock1": "Il reste ",
+        "stock2": " produits",
+        "CGV": "Lire les conditions générales de ventes.",
+        "add2cart": "Ajouter au panier",
+        "buy": "Acheter maintenant"
+    },
+    "modal": {
+        "title": "Conditions générales de vente :",
+        "text1": "Avant de procéder à votre achat, veuillez prendre connaissance attentivement des conditions générales suivantes :",
+        "elem1": "Disponibilité des produits : La disponibilité du produit est sujette à des changements et peut varier en fonction des niveaux de stock. Nous nous efforçons de maintenir des informations précises sur les stocks, mais il est possible qu'un article soit temporairement ou définitivement en rupture de stock. Dans de tels cas, nous vous en informerons rapidement et vous proposerons des options alternatives ou un remboursement.",
+        "elem2": "Descriptions des produits : Nous mettons tout en œuvre pour fournir des descriptions précises et détaillées de nos produits. Cependant, veuillez noter que les images, les couleurs et les spécifications des produits peuvent légèrement varier par rapport au produit réel en raison des conditions d'éclairage, des paramètres du moniteur ou des mises à jour du fabricant. Nous vous encourageons à lire attentivement les détails du produit et à contacter notre équipe d'assistance clientèle si vous avez des questions spécifiques.",
+        "elem3": "Tarification et paiement : Les prix indiqués sur notre site web sont sujets à des modifications sans préavis. Bien que nous nous efforcions de maintenir des informations de tarification précises, des écarts occasionnels peuvent se produire. Dans le cas où un produit est affiché à un prix incorrect, nous nous réservons le droit d'annuler votre commande ou de vous contacter pour obtenir de plus amples instructions. Veuillez vous assurer que toutes les informations de paiement fournies sont exactes et à jour.",
+        "elem4": "Expédition et livraison : Nous nous efforçons de traiter et d'expédier les commandes dans les délais spécifiés. Cependant, veuillez noter que les délais de livraison peuvent varier en fonction de votre emplacement, du transporteur et de toute circonstance imprévue. Nous ne pouvons garantir des dates de livraison exactes, mais nous vous fournirons des informations de suivi pour suivre l'avancement de votre colis. Des frais de douane supplémentaires, des droits ou des taxes peuvent s'appliquer aux commandes internationales.",
+        "elem5": "Retours et remboursements : Nous avons mis en place une politique de retour complète pour garantir votre satisfaction. Si vous rencontrez des problèmes avec votre achat, veuillez contacter notre équipe d'assistance clientèle dans le délai désigné spécifié dans notre politique de retour. Veuillez noter que certains produits, tels que les articles personnalisés ou les produits périssables, peuvent ne pas être éligibles au retour.",
+        "text2": "En procédant à votre achat, vous reconnaissez avoir lu et compris les conditions générales mentionnées ci-dessus. Si vous avez des questions ou des préoccupations, n'hésitez pas à contacter notre équipe d'assistance clientèle pour obtenir une aide supplémentaire.",
+        "button": "Fermer"
     }
 }
