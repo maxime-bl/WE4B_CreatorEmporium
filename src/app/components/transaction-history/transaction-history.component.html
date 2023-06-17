@@ -1,0 +1,19 @@
+<div class="transaction-list mx-auto">
+    <h4 *ngIf="isSeller == true">Produits vendus :</h4>
+    <h4 *ngIf="isSeller == false">Vous avez achetés :</h4>
+</div>
+<table class="table table-hover table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Product name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Seller name</th>
+            <th scope="col">Buyer name</th>
+            <th scope="col">Total price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <app-transaction *ngFor="let tr of transactions" [transaction]="tr"></app-transaction>
+    </tbody>
+</table>

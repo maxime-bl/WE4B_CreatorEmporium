@@ -32,6 +32,8 @@ import { FirebaseService } from './services/firebase.service';
 import { CommentComponent } from './components/comment/comment.component';
 import { CommentListComponent } from './components/comment-list/comment-list.component';
 import { CommentFormComponent } from './components/comment-form/comment-form.component';
+import { TransactionHistoryComponent } from './components/transaction-history/transaction-history.component';
+import { TransactionComponent } from './components/transaction/transaction.component';
 
 
 @NgModule({
@@ -52,7 +54,9 @@ import { CommentFormComponent } from './components/comment-form/comment-form.com
     NewProductComponent,
     CommentComponent,
     CommentListComponent,
-    CommentFormComponent
+    CommentFormComponent,
+    TransactionHistoryComponent,
+    TransactionComponent
   ],
   imports: [
     BrowserModule,
