@@ -3,8 +3,22 @@
 }
 
 .scaling {
-    width: 45%;
+    width: 40%;
     height: auto;
+    max-height: 50%;
+}
+
+.position {
+    top: 50%;
+}
+
+.img-hor {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
 }
 
 li {
