@@ -24,11 +24,4 @@ export class ProductPageComponent {
       this.isLoading = false;
     });
   }
-
-  // ngOnInit(): void {
-  //   this.dbService.getProductById(this.productId).subscribe((product) => {
-  //     this.product = product;
-  //     
-  //   });
-  // }
 }

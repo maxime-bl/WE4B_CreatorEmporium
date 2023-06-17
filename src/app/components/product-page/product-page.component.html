@@ -7,19 +7,19 @@
             <div *ngIf="!isLoading" class="container d-flex flex-column mx-0 pe-4 pt-4 w-100">
                 <h1 class="prd-name">{{ product.name }}</h1>
                 <p class="prd-seller" *transloco="let t; read:'product_page'">{{t("seller")}} {{ product.seller }}.</p>
-                <!-- <p class="prd-seller">{{ product.description }}</p> -->
+                <p class="prd-seller">{{ product.description }}</p>
             </div>
         </div>
-        <div class="pe-4 pt-4 w-100">
+        <div class="pe-4 pt-4 w-40">
             <div class="card mb-4 rounded-3 shadow-sm w-100">
                 <div class="card-header py-3">
                     <h3 class="card-title pricing-card-title">{{ product.price | money}}
                     </h3>
                 </div>
                 <div class="card-body">
-                    <!-- <p class="prd-seller">Il reste {{ product.quantity }} produits.</p> -->
-                    <p class="prd-seller" *transloco="let t; read:'product_page'">{{t('stock1')}} 22 {{t('stock2')}}.</p>
-                    <button type="button" class="btn btn-modal mb-2" data-bs-toggle="modal" data-bs-target="#CGV-Modal" *transloco="let t; read:'product_page'">{{t('CGV')}}</button>
+                    <!-- <p class="prd-seller">Il reste  produits.</p> -->
+                    <p class="prd-seller" *transloco="let t; read:'product_page'">{{t('stock1')}} {{ product.quantity }} {{t('stock2')}}.</p>
+                    <button type="button" class="btn-modal mb-2" data-bs-toggle="modal" data-bs-target="#CGV-Modal" *transloco="let t; read:'product_page'">{{t('CGV')}}</button>
                     <button type="button" class="w-100 btn btn-lg btn-primary mb-2" *transloco="let t; read:'product_page'">{{t('add2cart')}}</button>
                     <button type="button" class="w-100 btn btn-lg btn-primary" *transloco="let t; read:'product_page'">{{t('buy')}}</button>
                 </div>

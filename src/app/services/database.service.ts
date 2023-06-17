@@ -253,4 +253,23 @@ export default class DatabaseService {
       })
     );
   }
+
+  async addComment(productID: string, userID: string, username: string, title: string, text: string, grade: number) : Promise<boolean>{
+    try {
+      await setDoc(doc(this.db, 'comments'), {
+        productID: productID,
+        userID: userID,
+        username: username,
+        title: title,
+        text: text,
+        grade: grade
+      });
+
+      return true;
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  
 }

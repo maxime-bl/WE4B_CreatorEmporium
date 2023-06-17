@@ -42,7 +42,7 @@ export class CommentFormComponent {
       const text = this.commentForm.get("text")?.value;
       const grade = Number(this.commentForm.get("grade")?.value);
 
-      this.dbService.addComment(this.productID!, this.userID!, this.username!, title!, text!, grade!).then((res: string) => {
+      this.dbService.addComment(this.productID!, this.userID!, this.username!, title!, text!, grade!).then(() => {
         this.successDialog.nativeElement.showModal();
         this.isLoading = false;
       }).catch((error) => {
