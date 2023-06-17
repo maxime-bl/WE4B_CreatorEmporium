@@ -12,21 +12,20 @@ import { FirebaseApp, FirebaseError } from '@angular/fire/app';
 import { Observable, from, Subject } from 'rxjs';
 import { Router } from '@angular/router';
 import { User } from '../classes/user';
+import { FirebaseService } from './firebase.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   app: FirebaseApp;
-  databaseService: DatabaseService;
-  auth: Auth;
-  user = new Subject<User | null>();
-  loggedIn = new Subject<boolean>();
+  user : User | null = null;
+  loggedIn : boolean = false
   router;
 
-  constructor(databaseService: DatabaseService, router: Router) {
+  constructor(private databaseService: DatabaseService, private firebaseService: FirebaseService, router: Router, private auth: Auth) {
     this.databaseService = databaseService;
-    this.app = databaseService.getAppRef();
+    this.app = firebaseService.getApp()
     this.auth = getAuth(this.app); // init Firebase Authentification + get reference
     this.router = router;
 
@@ -36,13 +35,12 @@ export class AuthService {
         const displayName = await databaseService.getDisplayName(fbUser.uid);
         const isSeller = displayName == '' ? false : true;
 
-        this.user.next(
-          new User(fbUser.uid, fbUser.email, isSeller, displayName)
-        );
-        this.loggedIn.next(true);
+        this.user = new User(fbUser.uid, fbUser.email, isSeller, displayName)
+    
+        this.loggedIn = true;
       } else {
-        this.user.next(null);
-        this.loggedIn.next(false);
+        this.user = null;
+        this.loggedIn = false;
       }
     });
   }
@@ -130,11 +128,11 @@ export class AuthService {
     await signOut(this.auth);
   }
 
-  isLoggedIn(): Observable<boolean> {
+  isLoggedIn(): boolean{
     return this.loggedIn;
   }
 
-  getCurrentUser(): Observable<User | null> {
+  getCurrentUser() : User | null {
     return this.user;
   }
 }

@@ -1,0 +1,114 @@
+<div class="container mb-4">
+  <h1>Ajout de produit</h1>
+  <form [formGroup]="productForm">
+    <div class="form-group">
+      <label for="name">Nom du produit</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        placeholder="Entrez le nom du produit"
+        formControlName="name"
+      />
+      <p class="error" [hidden]="isInputValid('name')">Le produit doit comporter un nom</p>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea
+        class="form-control"
+        id="description"
+        rows="4"
+        placeholder="Entrez la description du produit"
+        formControlName="description"
+      ></textarea>
+      <p class="error" [hidden]="isInputValid('description')">Le produit doit comporter une description</p>
+    </div>
+
+    <div>
+      <label for="imgFile">Ajouter une image</label>
+      <input
+        class="form-control"
+        type="file"
+        id="imgFile"
+        formControlName="imgFile"
+        accept=".png,.jpg,.jpeg"
+        (change)="onFileSelected($event)"
+      />
+      <p class="error" [hidden]="isImageValid || !isTouched('imgFile')">Le produit doit comporter une image (format png, jpg, ou jpeg)</p>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <label for="price">Prix</label>
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control"
+            id="price"
+            placeholder="Entrez un prix"
+            formControlName="price"
+            (keyup)="onPriceChanged()"
+          />
+          <div class="input-group-append">
+            <span class="input-group-text">€</span>
+          </div>
+          <p class="error" [hidden]="isPriceValid || !isTouched('price')" >Le prix est incorrect</p>
+        </div>
+      </div>
+      <div class="form-group col">
+        <label for="quantiteProduit">Quantité en stock</label>
+        <input
+          type="number"
+          class="form-control"
+          id="quantiteProduit"
+          placeholder="Entrez la quantité disponible"
+          formControlName="quantity"
+          (change)="onQuantityChanged()"
+          (keyup)="onQuantityChanged()"
+        />
+        <p class="error" [hidden]="isQuantityValid || !isTouched('quantity')">La quantité est incorrecte</p>
+      </div>
+    </div>
+
+    <div>
+      <label for="category">Catégorie produit</label>
+      <select class="custom-select" id="category" formControlName="category">
+        <option value="" selected>Choisissez une catégorie</option>
+        <option *ngFor="let cat of categoryList" value="{{ cat.categoryID }}">
+          {{ cat.name }}
+        </option>
+      </select>
+      <p class="error" [hidden]="isInputValid('category')">Veuillez sélectionner une catégorie</p>
+    </div>
+
+    <button
+      type="submit"
+      (click)="submit()"
+      [disabled]="!isFormValid() || isLoading"
+      class="btn btn-primary px-4 py-2 mt-4"
+    >
+      Ajouter le produit
+    </button>
+  </form>
+
+  <dialog id="successDialog" #successDialog>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Votre produit a bien été ajouté !</h5>
+        <p class="card-text">Vous pouvez dès maintenant consulter la page de votre produit en cliquant sur le bouton ci-dessous</p>
+        <button class="btn btn-primary me-3" [routerLink]="['/product', productID]">Voir la page du produit</button>
+        <button class="btn btn-secondary" routerLink="/">Revenir à l'accueil</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="errorDialog" #errorDialog>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Une erreur s'est produite</h5>
+        <p class="card-text">Votre produit n'a pas pu être ajouté. Veuillez réessayer plus tard</p>
+        <button class="btn btn-primary" onclick="errorDialog.close()">Fermer</button>
+      </div>
+    </div>
+  </dialog>
+</div>

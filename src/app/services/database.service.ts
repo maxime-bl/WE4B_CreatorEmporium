@@ -12,14 +12,18 @@ import {
   getFirestore,
   QuerySnapshot,
   DocumentSnapshot,
-  QueryStartAtConstraint,
+  addDoc,
   Query,
+  updateDoc,
 } from '@angular/fire/firestore';
-import { environment } from 'src/environments/environment';
+
 import { Product, ProductData } from '../classes/product';
-import { Observable, from, map } from 'rxjs';
+import { Observable, firstValueFrom, from, map } from 'rxjs';
 import { Seller, SellerData } from '../classes/seller';
 import { Category, CategoryData } from '../classes/category';
+import { StorageService } from './storage.service';
+import { FirebaseService } from './firebase.service';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root',
@@ -28,20 +32,42 @@ export default class DatabaseService {
   db: Firestore;
   app: FirebaseApp;
 
-  constructor(private firestore: Firestore) {
-    this.app = initializeApp(environment.firebase);
+  constructor(private firebaseService: FirebaseService, private storageService: StorageService) {
+    this.app = firebaseService.getApp();
     this.db = getFirestore(this.app);
   }
 
-  getAppRef(): FirebaseApp {
-    return this.app;
-  }
+  
 
   getDbRef(): Firestore {
     return this.db;
   }
 
   /* Products functions */
+
+  async addProduct(name: string, description: string, price: number, quantity: number, categoryID: string, image: File, sellerName: string) : Promise<string>{
+    try {
+      const prodRef = await addDoc(collection(this.db, 'products'), {
+        name: name,
+        description: description,
+        price: price,
+        quantity: quantity,
+        categoryID: ["all", categoryID],
+        imagePath: "",
+        seller: sellerName
+      })
+
+      const imageURL = await this.storageService.uploadProductImage(prodRef.id, image);
+
+      await updateDoc(prodRef, {
+        imagePath: imageURL
+      });
+
+      return prodRef.id
+    } catch (error) {
+      throw new Error("Product creation failed")
+    }
+  }
 
   getProductById(id: string): Observable<Product> {
     const productsRef = collection(this.db, 'products');
