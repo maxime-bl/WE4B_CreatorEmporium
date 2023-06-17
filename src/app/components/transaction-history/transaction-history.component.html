@@ -1,9 +1,9 @@
-<div class="transaction-list mx-auto">
+<div class="transaction-list mx-auto mt-4" style="width: 80vw;">
     <h4 *ngIf="transactions.length == 0"> Aucun historique </h4>
     <h4 *ngIf="transactions.length > 0 && isSeller == true">Produits vendus :</h4>
     <h4 *ngIf="transactions.length > 0 && isSeller == false">Vous avez achetés :</h4>
 </div>
-<table class="table table-hover table-bordered">
+<table class="table table-striped table-hover table-shadow table-bordered mx-auto" style="width: 80vw;">
     <thead>
         <tr>
             <th scope="col">Date</th>

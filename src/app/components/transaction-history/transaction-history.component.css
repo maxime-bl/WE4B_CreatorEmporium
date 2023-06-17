@@ -1,0 +1,5 @@
+.table-shadow{
+    border: 1px black solid !important;
+    box-shadow: 0.15rem 0.15rem 0 0 black;
+    white-space: nowrap;
+}
