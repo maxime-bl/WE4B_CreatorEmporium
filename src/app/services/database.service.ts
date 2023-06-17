@@ -23,7 +23,7 @@ import { Seller, SellerData } from '../classes/seller';
 import { Category, CategoryData } from '../classes/category';
 import { StorageService } from './storage.service';
 import { FirebaseService } from './firebase.service';
-import { AuthService } from './auth.service';
+import { Comment } from '../classes/comment';
 
 @Injectable({
   providedIn: 'root',
@@ -229,6 +229,25 @@ export default class DatabaseService {
           categories.push(cat);
         });
         return categories;
+      })
+    );
+  }
+
+  /* Comment functions */
+
+  getCommentsForProduct(productID: string) : Observable<Comment[]>{
+    const commentsRef = collection(this.db, 'comments');
+
+    const q = query(commentsRef, where('productID', '==', productID));
+
+    return from(getDocs(q)).pipe(
+      map((querySnapshot: QuerySnapshot) => {
+        const comments: Comment[] = [];
+        querySnapshot.forEach((doc) => {
+          const comment = doc.data() as Comment;
+          comments.push(comment);
+        });
+        return comments;
       })
     );
   }
