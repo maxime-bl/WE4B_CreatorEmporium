@@ -1,0 +1,19 @@
+.card {
+    border-color: black;
+}
+
+.username {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.grade {
+    min-width: 7vw !important;
+}

@@ -1,0 +1,5 @@
+<h4 *ngIf="comments.length == 0" class="text-center">Aucun commentaires pour ce produit</h4>
+<div class="comment-list mx-auto">
+    <h4 *ngIf="comments.length > 0" class=" my-4">Commentaires : </h4>
+    <app-comment *ngFor="let com of comments" [comment]="com"></app-comment>
+</div>
