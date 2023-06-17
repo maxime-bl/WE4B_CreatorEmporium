@@ -19,7 +19,7 @@ export class TransactionHistoryComponent {
   constructor(private auth: AuthService, private dbService: DatabaseService) {
     this.auth.getCurrentUserAsObservable().subscribe(
       res => {
-        this.currentUser = res
+        this.currentUser = res;
       }
     )
     if (this.currentUser?.isSeller) {

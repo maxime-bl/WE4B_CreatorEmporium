@@ -17,3 +17,4 @@
         <app-transaction *ngFor="let tr of transactions" [transaction]="tr"></app-transaction>
     </tbody>
 </table>
+<p *ngIf="transactions.length == 0"> Aucun hystorique </p>
