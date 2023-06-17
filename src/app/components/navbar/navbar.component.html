@@ -1,4 +1,4 @@
-<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between px-3 py-2">
+<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-between px-4 py-3">
   <div class="d-flex align-items-center col-md-3 mb-md-0">
     <a routerLink="/" class="d-inline-flex link-body-emphasis text-decoration-none ">
       <img class="logo" src="../../../assets/Logo.png" alt="Creator Emporium Logo">
@@ -6,21 +6,26 @@
   </div>
 
   <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-    <li><a routerLink="/market" class="nav-link px-2 link-secondary" *transloco="let t; read:'nav'">{{t("market")}}</a>
-    </li>
-    <li><a routerLink="/" class="nav-link px-2 link-dark" *transloco="let t; read:'nav'">{{t("features")}}</a></li>
-    <li><a routerLink="/" class="nav-link px-2 link-dark" *transloco="let t; read:'nav'">{{t("pricing")}}</a></li>
-    <li><a routerLink="/" class="nav-link px-2 link-dark" *transloco="let t; read:'nav'">{{t("qnas")}}</a></li>
-    <li><a routerLink="/" class="nav-link px-2 link-dark" *transloco="let t; read:'nav'">{{t("about")}}</a></li>
+    <li><a routerLink="/market" class="nav-link px-2 link-dark" *transloco="let t; read:'nav'">{{t("market")}}</a></li>
+    
+    <li><a routerLink="/orders" [hidden]="currentUser == null || currentUser.isSeller" class="nav-link px-2 link-dark" *transloco="let t; read:'nav'">{{t("orders")}}</a></li>
+    <li><a routerLink="/cart" [hidden]="currentUser == null || currentUser.isSeller" class="nav-link px-2 link-dark" *transloco="let t; read:'nav'">{{t("cart")}}</a></li>
+
+    <li><a routerLink="/sales" [hidden]="currentUser == null || !currentUser.isSeller" class="nav-link px-2 link-dark" *transloco="let t; read:'nav'">{{t("sales")}}</a></li>
+    <li><a routerLink="/product-management" [hidden]="currentUser == null || !currentUser.isSeller" class="nav-link px-2 link-dark" *transloco="let t; read:'nav'">{{t("product-management")}}</a></li>
+
+    <li><a routerLink="/more-info" class="nav-link px-2 link-dark" *transloco="let t; read:'nav'">{{t("about")}}</a></li>
   </ul>
 
   <div class="col-md-3 text-end">
     <div class="d-flex flex-nowrap align-items-center justify-content-md-end w-100">
-      <app-language-selector class="me-2"></app-language-selector>
-      <button routerLink="/login" type="button" class="btn btn-secondary me-2"
-        *transloco="let t; read:'nav'">{{t("login")}}</button>
-      <button routerLink="/register" type="button" class="btn btn-primary"
-        *transloco="let t; read:'nav'">{{t("signup")}}</button>
+      <app-language-selector class="me-2 mt-1"></app-language-selector>
+        <button routerLink="/login" [hidden]="currentUser != null" type="button" class="btn btn-secondary me-2"
+          *transloco="let t; read:'nav'">{{t("login")}}</button>
+        <button routerLink="/register" [hidden]="currentUser != null" type="button" class="btn btn-primary"
+          *transloco="let t; read:'nav'">{{t("signup")}}</button>
+        <button (click)="logout()" [hidden]="currentUser === null" class="btn btn-secondary" *transloco="let t; read:'nav'">{{ t("logout") }}</button>
+
     </div>
   </div>
 </header>
