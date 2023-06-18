@@ -34,7 +34,9 @@
     "login": {
         "title": "Log-in:",
         "email": "E-mail",
+        "placeholder_email": "name@example.com",
         "passwd": "Password",
+        "placeholder_pwd": "Password",
         "button": "Log-in",
         "reg_question": "Don't have an account yet?",
         "register": "Sign-up"
@@ -43,13 +45,16 @@
         "title": "Register:",
         "email": "Email Address",
         "email_error": "Please enter a valid email address",
+        "placeholder_email": "Enter your email",
         "passwd": "Password",
         "pwd_error": "The password must be at least 6 characters long",
+        "placeholder_pwd": "Enter your password",
         "button": "Register",
         "choices": "I want to register on CreatorCentral for:",
         "choice1": "buying articles",
         "choice2": "selling my products",
         "nickname": "Display Name",
+        "placeholder_nickname": "Enter your nickname",
         "nick_desc": "This is the name that your customers will see.",
         "register": "Create an account"
     },
@@ -59,7 +64,8 @@
         "stock2": " left",
         "CGV": "Read the terms and conditions of sale.",
         "add2cart": "Add to cart",
-        "buy": "Buy now"
+        "buy": "Buy now",
+        "comments": "Comments:"
     },
     "modal": {
         "title": "General terms and conditions of sale:",
@@ -74,7 +80,7 @@
     },
     "transactions": {
         "title1": "No history",
-        "title2": "Selled products:",
+        "title2": "Sold products:",
         "title3": "Bought products:",
         "col1": "Date",
         "col2": "Product name",
@@ -82,5 +88,80 @@
         "col4": "Seller name",
         "col5": "Buyer name",
         "col6": "Total price"
+    },
+    "comment_form": {
+        "pre_title": "Write a comment",
+        "title": "Title",
+        "placeholder_title": "Enter the comment title",
+        "title_error": "The comment must have a title.",
+        "description": "Description",
+        "placeholder_desc": "Enter the product description",
+        "grade": "Rating",
+        "choose_grade": "Choose a rating",
+        "grade_error": "Please select a rating",
+        "button": "Submit Comment"
+    },
+    "new_product": {
+        "title": "Add Product",
+        "product_name": "Product Name",
+        "placeholder_prod": "Enter the product name",
+        "product_error": "The product must have a name.",
+        "description": "Description",
+        "placeholder_desc": "Enter the product description",
+        "error_desc": "The product must have a description.",
+        "image": "Add an Image",
+        "error_image": "The product must have an image (png, jpg, or jpeg format).",
+        "price": "Price",
+        "placeholder_price": "Enter a price",
+        "error_price": "The price is incorrect.",
+        "quantity": "Stock Quantity",
+        "placeholder_quant": "Enter the available quantity",
+        "error_quant": "The quantity is incorrect.",
+        "category": "Product Category",
+        "category_select": "Choose a category",
+        "error_cat": "Please select a category.",
+        "button": "Add Product",
+        "successful_title": "Your product has been successfully added!",
+        "successful_text": "You can now view your product's page by clicking the button below.",
+        "button1": "View Product Page",
+        "button2": "Go Back to Homepage",
+        "failure_title": "An error occurred.",
+        "failure_text": "Your product could not be added. Please try again later.",
+        "button3": "Close"
+    },
+    "comment_list": {
+        "title": "No comment for this product."
+    },
+    "market": {
+        "key_word": "Keywords",
+        "placeholder_kword": "Search",
+        "category": "Category",
+        "category_button": "All Categories",
+        "seller": "Seller",
+        "price": "Price",
+        "button_apply": "Apply Filters",
+        "button_reset": "Reset"
+    },
+    "product_card": {
+        "seller": "Sold by "
+    },
+    "product_list": {
+        "no_prod": "No products match your search.",
+        "add": "New product"
+    },
+    "edit_form": {
+        "seller": "Seller: ",
+        "quantity": "New quantity:",
+        "placeholder_quant":"Enter the available quantity",
+        "error_quant":"The quantity is incorrect.",
+        "button": "Edit",
+        "remove": "Remove",
+        "successful_title": "Your product has been successfully edited!",
+        "successful_text": "You can now view your product's page by clicking the button below.",
+        "button1": "View Product Page",
+        "button2": "Go Back to Homepage",
+        "failure_title": "An error occurred.",
+        "failure_text": "Your product could not be edited. Please try again later.",
+        "button3": "Close"
     }
 }

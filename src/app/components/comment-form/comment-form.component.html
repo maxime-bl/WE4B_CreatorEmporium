@@ -1,41 +1,39 @@
-<form [hidden]="!canComment" [formGroup]="commentForm" class="form px-4 py-4">
-  <h4>Ecrire un commentaire</h4>
+<form [hidden]="!canComment" [formGroup]="commentForm" class="form px-4 py-4" *transloco="let t; read:'comment_form'">
+  <h4>{{t("pre_title")}}</h4>
   <div class="form-group">
-    <label for="title">Titre</label>
+    <label for="title">{{t("title")}}</label>
     <input
       type="text"
       class="form-control"
       id="title"
-      placeholder="Entrez le titre du commentaire"
+      placeholder="{{t('placeholder_title')}}"
       formControlName="title"
     />
     <p class="error" [hidden]="isInputValid('title')">
-      Le commentaire doit comporter un titre
+      {{t("title_error")}}
     </p>
   </div>
   <div class="form-group">
-    <label for="description">Description</label>
+    <label for="description">{{t("description")}}</label>
     <textarea
       class="form-control"
       id="text"
       rows="4"
-      placeholder="Entrez la description du produit"
+      placeholder="{{t('placeholder_desc')}}"
       formControlName="text"
     ></textarea>
   </div>
   <div>
-    <label for="grade">Note</label>
+    <label for="grade">{{t("grade")}}</label>
     <select class="custom-select" id="grade" formControlName="grade">
-      <option value="" selected> Choisissez une note </option>
+      <option value="" selected> {{t("choose_grade")}} </option>
       <option value="5"> 5 / 5 </option>
       <option value="4"> 4 / 5 </option>
       <option value="3"> 3 / 5 </option>
       <option value="2"> 2 / 5 </option>
       <option value="1"> 1 / 5 </option>
     </select>
-    <p class="error" [hidden]="isInputValid('grade')">Veuillez sélectionner une catégorie</p>
+    <p class="error" [hidden]="isInputValid('grade')">{{t("grade_error")}}</p>
   </div>
-  <button type="submit" [disabled]="!isFormValid() || isLoading" (click)="submit()" class="btn btn-primary mt-3">Envoyer le commentaire</button>
-
-  
+  <button type="submit" [disabled]="!isFormValid() || isLoading" (click)="submit()" class="btn btn-primary mt-3">{{t("button")}}</button>
 </form>
