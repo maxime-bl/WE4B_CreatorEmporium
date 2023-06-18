@@ -25,6 +25,7 @@ import { Category, CategoryData } from '../classes/category';
 import { StorageService } from './storage.service';
 import { FirebaseService } from './firebase.service';
 import { Comment } from '../classes/comment';
+import { Transaction } from '../classes/transaction';
 
 @Injectable({
   providedIn: 'root',
@@ -285,4 +286,40 @@ export default class DatabaseService {
       return true
     }
   } 
+
+  /* Transaction functions */
+
+  getTransactionByUserID(userID: string): Observable<Transaction[]>{
+    const transactionsRef = collection(this.db, 'orders');
+
+    const q = query(transactionsRef, where('userID', '==', userID));
+
+    return from(getDocs(q)).pipe(
+      map((querySnapshot: QuerySnapshot) => {
+        const transactions: Transaction[] = [];
+        querySnapshot.forEach((doc) => {
+          const transaction = doc.data() as Transaction;
+          transactions.push(transaction);
+        });
+        return transactions;
+      })
+    );
+  }
+
+  getTransactionBySellerID(sellerID: string): Observable<Transaction[]>{
+    const transactionsRef = collection(this.db, 'orders');
+
+    const q = query(transactionsRef, where('sellerID', '==', sellerID));
+
+    return from(getDocs(q)).pipe(
+      map((querySnapshot: QuerySnapshot) => {
+        const transactions: Transaction[] = [];
+        querySnapshot.forEach((doc) => {
+          const transaction = doc.data() as Transaction;
+          transactions.push(transaction);
+        });
+        return transactions;
+      })
+    );
+  }
 }
