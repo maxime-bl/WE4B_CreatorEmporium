@@ -1,0 +1,56 @@
+<div class="card mt-4" style="width: auto;" *transloco="let t; read:'edit_form'">
+
+    <img [routerLink]="['/product', product.productID]" src="{{product.imagePath}}" class="card-img-top"
+        alt="Product image">
+
+    <div [routerLink]="['/product', product.productID]" class="card-body text-bg-dark">
+        <p class="product-title">{{ product.name }}</p>
+        <p class="product-price">{{ product.price | money}}</p>
+    </div>
+
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item seller" *transloco="let t; read:'product_card'">{{t('seller')}}{{ product.seller
+            }}.</li>
+    </ul>
+
+    <form [formGroup]="editForm" class="form card-body text-bg-dark">
+        <div class="form-group">
+            <label for="quantity">{{t('quantity')}}</label>
+            <input type="number" class="form-control" id="quantiteProduit" placeholder="{{t('placeholder_quant')}}"
+                formControlName="quantity" (change)="onQuantityChanged()" (keyup)="onQuantityChanged()" />
+            <p class="error" [hidden]="isQuantityValid || !isTouched('quantity')">{{t('error_quant')}}</p>
+        </div>
+        <div class="d-flex justify-content-around w-100">
+            <button type="submit" (click)="update()" [disabled]="!isFormValid() || isLoading"
+                class="btn btn-primary px-4 py-2 mt-4">
+                {{t('button')}}
+            </button>
+            <button type="submit" (click)="remove()"
+                class="btn btn-primary px-4 py-2 mt-4" style="background-color: red;">
+                {{t("remove")}}
+            </button>
+        </div>
+    </form>
+
+    <dialog id="successDialog" #successDialog>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{t('successful_title')}}</h5>
+                <p class="card-text">{{t('successful_text')}}</p>
+                <button class="btn btn-primary me-3"
+                    [routerLink]="['/product', product.productID]">{{t('button1')}}</button>
+                <button class="btn btn-secondary" routerLink="/">{{t('button2')}}</button>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="errorDialog" #errorDialog>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{t('failure_title')}}</h5>
+                <p class="card-text">{{t('failure_text')}}</p>
+                <button class="btn btn-primary" onclick="errorDialog.close()">{{t('button3')}}</button>
+            </div>
+        </div>
+    </dialog>
+</div>

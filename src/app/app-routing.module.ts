@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { MoreInfoComponent } from './components/more-info/more-info.component';
 import { NewProductComponent } from './components/new-product/new-product.component';
 import { TransactionHistoryComponent } from './components/transaction-history/transaction-history.component';
+import { ProductManagementComponent } from './components/product-management/product-management.component';
 
 const routes: Routes = [
   {path: "", component: HomeComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'more-info', component: MoreInfoComponent},
   {path: 'newproduct', component: NewProductComponent},
-  {path: 'transactions', component: TransactionHistoryComponent}
+  {path: 'transactions', component: TransactionHistoryComponent},
+  {path: 'product-management', component: ProductManagementComponent}
 ]
 
 @NgModule({

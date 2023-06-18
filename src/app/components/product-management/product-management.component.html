@@ -1,0 +1,6 @@
+<div *transloco="let t; read:'product_list'">
+    <h4 *ngIf="products.length == 0" class="text-center">{{t('no_prod')}}</h4>
+</div>
+<div class="product-list">
+    <app-product-edition-card *ngFor="let prod of products" [product]="prod"></app-product-edition-card>
+</div>
