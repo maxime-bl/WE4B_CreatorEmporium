@@ -17,6 +17,7 @@ import {
   updateDoc,
   deleteDoc,
   orderBy,
+  serverTimestamp,
 } from '@angular/fire/firestore';
 
 import { Product, ProductData } from '../classes/product';
@@ -48,7 +49,7 @@ export default class DatabaseService {
 
   /* Products functions */
 
-  async addProduct(name: string, description: string, price: number, quantity: number, categoryID: string, image: File, sellerName: string) : Promise<string>{
+  async addProduct(name: string, description: string, price: number, quantity: number, categoryID: string, image: File, sellerName: string, sellerID: string) : Promise<string>{
     try {
       const prodRef = await addDoc(collection(this.db, 'products'), {
         name: name,
@@ -57,7 +58,8 @@ export default class DatabaseService {
         quantity: quantity,
         categoryID: ["all", categoryID],
         imagePath: "",
-        seller: sellerName
+        seller: sellerName,
+        sellerID: sellerID
       })
 
       const imageURL = await this.storageService.uploadProductImage(prodRef.id, image);
@@ -90,7 +92,8 @@ export default class DatabaseService {
           data.price,
           data.quantity,
           data.description,
-          data.imagePath
+          data.imagePath,
+          data.sellerID
         );
         return product;
       })
@@ -114,7 +117,8 @@ export default class DatabaseService {
             data.price,
             data.quantity,
             data.description,
-            data.imagePath
+            data.imagePath,
+            data.sellerID
           );
           products.push(product);
         });
@@ -154,7 +158,8 @@ export default class DatabaseService {
             data.price,
             data.quantity,
             data.description,
-            data.imagePath
+            data.imagePath,
+            data.sellerID
           );
           products.push(product);
         });
@@ -326,7 +331,7 @@ export default class DatabaseService {
 
   getProductByUserId(id: string): Observable<Product[]> {
     const productsRef = collection(this.db, 'products');
-    const q = query(productsRef, where('userID', '==', id));
+    const q = query(productsRef, where('sellerID', '==', id));
 
     return from(getDocs(q)).pipe(
       map((querySnapshot: QuerySnapshot) => {
@@ -341,7 +346,8 @@ export default class DatabaseService {
             data.price,
             data.quantity,
             data.description,
-            data.imagePath
+            data.imagePath,
+            data.sellerID
           );
           products.push(product);
         });
@@ -392,5 +398,21 @@ export default class DatabaseService {
     } catch (error) {
       throw error;
     }
+  }
+
+  addTransaction(productID : string, productName: string, quantity: number, sellerID: string, sellerName: string, userID: string, username: string, totalPrice: number){
+    const transacRef = collection(this.db, 'transactions');
+
+    addDoc(transacRef, {
+      date: serverTimestamp(),
+      productID: productID,
+      productName: productName,
+      quantity: quantity,
+      sellerID: sellerID,
+      sellerName: sellerName,
+      userID: userID,
+      username: username,
+      totalPrice: totalPrice,
+    })
   }
 }

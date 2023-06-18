@@ -17,3 +17,33 @@
 .btn-modal:hover{
     color: var(--ce-primary);
 }
+
+.prd-image{
+    border: 2px solid black;
+    border-radius: 0.375rem;
+    box-shadow: 0.3rem 0.4rem 0 0 black;
+}
+
+dialog{
+    background: none;
+    border: none;
+}
+
+
+dialog::backdrop{
+    background-color: rgba(0, 0, 0, 0.542);
+}
+
+.card{
+    background-color: var(--ce-bg);
+    border: 2px black solid;
+    max-width: 500px;
+}
+
+.card-header{
+    border-bottom: 1px black solid;
+}
+
+.bg-white{
+    background-color: white;
+}

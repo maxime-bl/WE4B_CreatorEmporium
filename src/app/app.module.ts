@@ -36,6 +36,7 @@ import { TransactionHistoryComponent } from './components/transaction-history/tr
 import { CartService } from './services/cart.service';
 import { ProductManagementComponent } from './components/product-management/product-management.component';
 import { ProductEditionCardComponent } from './components/product-edition-card/product-edition-card.component';
+import { CartComponent } from './components/cart/cart.component';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { ProductEditionCardComponent } from './components/product-edition-card/p
     CommentFormComponent,
     TransactionHistoryComponent,
     ProductManagementComponent,
-    ProductEditionCardComponent
+    ProductEditionCardComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
