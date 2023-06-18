@@ -51,6 +51,7 @@ body{
 
 .btn:not(:disabled):not(:disabled):active{
     box-shadow: 0 0 0 0 black;
+    transform: translate(0.10rem, 0.10rem);
 }
 
 .btn-primary{
