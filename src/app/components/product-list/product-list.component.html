@@ -1,4 +1,7 @@
 <h4 *ngIf="products.length == 0" class="text-center">Aucun produit ne correspond à votre recherche</h4>
-<div class="product-list">
-    <app-product-card *ngFor="let prod of products" [product]="prod"></app-product-card>
+<div class="product-list row justify-items-start mb-3" *ngFor="let prod of products">
+    <div class="col p-2">
+        <app-product-card [product]="prod"></app-product-card>
+        <button class="btn btn-primary" (click)="addToCart(prod)">Add to cart</button>
+    </div>
 </div>

@@ -54,6 +54,7 @@
     },
     "cart": {
         "total": "Total:",
-        "delete": "Remove from cart"
+        "delete": "Remove from cart",
+        "buy": "Buy"
     }
 }

@@ -12,6 +12,10 @@ export class ProductListComponent {
 
   constructor() {}
 
+  addToCart(prod: Product) : void {
+    prod.inCart++;
+  }
+
   // ngOnInit(): void {
   //   this.databaseService.getAllProducts().subscribe(
   //     (products) => (this.products = products));

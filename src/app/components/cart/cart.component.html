@@ -1,17 +1,21 @@
-<div class="d-inline-flex col-12 col-md-10 align-items-start">
+<div class="d-inline-flex col-12 col-md-10 align-items-start" *transloco="let t; read:'cart'">
     <div class="col-md-10 col-2">
+        <div *ngIf="getNumberInCart() == 0" class="d-flex justify-content-center pl-10"><h4>Votre panier est vide.</h4></div>
         <div class="product-list d-inline-flex flex-wrap p-1 row mb-5 mt-3"
         *ngFor="let prod of products">
-            <app-product-card [product]="prod" width="20%"></app-product-card>
-            <button class="btn btn-outline-primary p-3" (click)="deleteFromCart()" *transloco="let t; read:'cart'">{{t("delete")}}</button>
+            <div *ngIf="prod.inCart > 0">
+                <app-product-card [product]="prod" width="20%"></app-product-card>
+                <button class="btn btn-outline-primary p-3" (click)="removeFromCart()">{{t("delete")}}</button>
+            </div>
         </div>
     </div>
     <div class="cart-container d-flex flex-wrap me-1 p-3 col-6 col-md-4">
-        <div>
-            <p *ngFor="let prod of products"><b>{{prod.name}}</b>: {{prod.price}}€</p>
+        <div *ngFor="let prod of products">
+            <p *ngIf="prod.inCart > 0"><b>{{prod.name}}</b>: {{prod.price}}€</p>
             <br>
         </div>
         <hr>
-        <p *transloco="let t; read:'cart'"><b>{{t("total")}}</b> {{getTotalPrice()}}</p>
+        <p><b>{{t("total")}}</b> {{getTotalPrice()}}</p>
+        <button *ngIf="getNumberInCart() != 0" class="btn btn-primary">{{t("buy")}}</button>    
     </div>
 </div>

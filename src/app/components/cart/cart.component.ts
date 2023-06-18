@@ -20,16 +20,24 @@ export class CartComponent {
     });
   }
 
+  getNumberInCart(){
+    let r = 0;
+    this.products.forEach(prod => {
+      r += prod.inCart;
+    });
+    return r;
+  }
+
   getTotalPrice() {
     let r = 0;
     this.products.forEach(prod => {
-      r += prod.price;
+      r += prod.price * prod.inCart;
     });
     return r.toFixed(2);
   }
 
-  deleteFromCart(){
-    
+  removeFromCart(){
+    return true;
   }
 
 }

@@ -14,7 +14,7 @@
 .cart-container{
     background-color: var(--ce-secondary);
     border-radius: 5%;
-    height: 600px !important;
+    height: auto !important;
 }
 
 .double-columns{

@@ -53,6 +53,7 @@
     },
     "cart": {
         "total": "Total :",
-        "delete": "Supprimer du panier"
+        "delete": "Supprimer du panier",
+        "buy": "Acheter"
     }
 }
