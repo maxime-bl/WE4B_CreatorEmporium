@@ -12,6 +12,7 @@ import { TransactionHistoryComponent } from './components/transaction-history/tr
 import { LoggedInGuard } from './guards/logged-in.guard';
 import { SellerGuard } from './guards/seller.guard';
 import { AnonymousGuard } from './guards/anonymous.guard';
+import { ProductManagementComponent } from './components/product-management/product-management.component';
 
 const routes: Routes = [
   {path: "", component: HomeComponent},
@@ -21,7 +22,10 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent, canActivate: [AnonymousGuard]},
   {path: 'more-info', component: MoreInfoComponent},
   {path: 'newproduct', component: NewProductComponent, canActivate: [SellerGuard]},
-  {path: 'transactions', component: TransactionHistoryComponent, canActivate: [LoggedInGuard]}
+  {path: 'transactions', component: TransactionHistoryComponent, canActivate: [LoggedInGuard]},
+  {path: 'newproduct', component: NewProductComponent, canActivate: [SellerGuard]},
+  {path: 'transactions', component: TransactionHistoryComponent, canActivate: [LoggedInGuard]},
+  {path: 'product-management', component: ProductManagementComponent, canActivate: [SellerGuard]}
 ]
 
 @NgModule({
