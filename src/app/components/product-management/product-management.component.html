@@ -4,3 +4,6 @@
 <div class="product-list">
     <app-product-edition-card *ngFor="let prod of products" [product]="prod"></app-product-edition-card>
 </div>
+<div class="d-flex w-100">
+    <button routerLink="/newproduct" class="btn btn-primary mx-auto">Add product</button>
+</div>
