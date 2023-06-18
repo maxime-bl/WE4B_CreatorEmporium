@@ -4,13 +4,13 @@
     <h2>{{ errorMsg }}</h2>
 
     <div class="form-floating pb-2">
-      <input formControlName="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Entrez votre email">
+      <input formControlName="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" *transloco="let t; read:'register'" placeholder="{{t('placeholder_email')}}">
       <label for="floatingInput" *transloco="let t; read:'register'">{{t("email")}}</label>
       <div class="alert alert-danger" [hidden]="isInputValid('email')" *transloco="let t; read:'register'">{{t("email_error")}}</div>
     </div>
 
     <div class="form-floating pb-4">
-      <input formControlName="password" type="password" class="form-control" id="password" placeholder="Password">
+      <input formControlName="password" type="password" class="form-control" id="password" *transloco="let t; read:'register'" placeholder="{{t('placeholder_pwd')}}">
       <label for="floatingInput" *transloco="let t; read:'register'">{{t("passwd")}}</label>
       <div class="alert alert-danger" [hidden]="isInputValid('password')" *transloco="let t; read:'register'">{{t("pwd_error")}}</div>
     </div>
@@ -24,7 +24,7 @@
     </div>
 
     <div class="form-floating pb-4" [hidden]="this.userType == 1">
-      <input formControlName="displayName" type="text" class="form-control" id="display-name" aria-describedby="emailHelp" placeholder="Entrez votre nom d'affichage">
+      <input formControlName="displayName" type="text" class="form-control" id="display-name" aria-describedby="emailHelp" *transloco="let t; read:'register'" placeholder="{{t('placeholder_nickname')}}">
       <label for="floatingInput" *transloco="let t; read:'register'">{{t("nickname")}}</label>
       <small id="emailHelp" class="form-text text-muted" *transloco="let t; read:'register'">{{t("nick_desc")}}</small>
     </div>

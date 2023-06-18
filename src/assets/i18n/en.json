@@ -34,7 +34,9 @@
     "login": {
         "title": "Log-in:",
         "email": "E-mail",
+        "placeholder_email": "name@example.com",
         "passwd": "Password",
+        "placeholder_pwd": "Password",
         "button": "Log-in",
         "reg_question": "Don't have an account yet?",
         "register": "Sign-up"
@@ -43,13 +45,16 @@
         "title": "Register:",
         "email": "Email Address",
         "email_error": "Please enter a valid email address",
+        "placeholder_email": "Enter your email",
         "passwd": "Password",
         "pwd_error": "The password must be at least 6 characters long",
+        "placeholder_pwd": "Enter your password",
         "button": "Register",
         "choices": "I want to register on CreatorCentral for:",
         "choice1": "buying articles",
         "choice2": "selling my products",
         "nickname": "Display Name",
+        "placeholder_nickname": "Enter your nickname",
         "nick_desc": "This is the name that your customers will see.",
         "register": "Create an account"
     },

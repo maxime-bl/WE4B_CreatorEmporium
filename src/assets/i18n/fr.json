@@ -34,7 +34,9 @@
     "login": {
         "title": "Connectez-vous :",
         "email": "Adresse mail",
+        "placeholder_email": "nom@exemple.com",
         "passwd": "Mot de passe",
+        "placeholder_pwd": "Mot de passe",
         "button": "Se connecter",
         "reg_question": "Pas encore de compte ?",
         "register": "Créer un compte"
@@ -43,13 +45,16 @@
         "title": "S'inscrire :",
         "email": "Adresse mail",
         "email_error": "Veuillez entrer une adresse email valide",
+        "placeholder_email": "Entrez votre email",
         "passwd": "Mot de passe",
         "pwd_error": "Le mot de passe doit comporter au moins 6 charactères",
+        "placeholder_pwd": "Mot de passe",
         "button": "S'inscrire",
         "choices": "Je veux m'inscrire sur CreatorCentral pour :",
         "choice1": "acheter des articles",
         "choice2": "vendre mes produits",
         "nickname": "Nom d'affichage",
+        "placeholder_nickname": "Entrez votre nom d'affichage",
         "nick_desc": "Il s'agit du nom que verront vos clients."
     },
     "product_page": {
@@ -76,7 +81,7 @@
         "title2": "Produits vendus :",
         "title3": "Vous avez achetés :",
         "col1": "Date",
-        "col2": "Nome du produit",
+        "col2": "Nom du produit",
         "col3": "Quantité",
         "col4": "Nom du vendeur",
         "col5": "Nom de l'acheteur",
