@@ -1,6 +1,11 @@
 .product-title {
   margin: 0;
   font-size: 18px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* number of lines to show */
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 
 .product-price {
@@ -30,6 +35,6 @@ a {
   border: 2px solid black;
 }
 
-.list-group{
+.list-group {
   border-top: 1px black solid;
 }
