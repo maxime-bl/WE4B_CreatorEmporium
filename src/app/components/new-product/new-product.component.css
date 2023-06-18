@@ -37,3 +37,10 @@ dialog::backdrop{
 .card-header{
     border-bottom: 1px black solid;
 }
+
+
+label{
+    font-size: 1.2rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.2rem;
+}
