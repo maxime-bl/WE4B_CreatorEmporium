@@ -127,5 +127,8 @@
         "failure_title": "Une erreur s'est produite.",
         "failure_text": "Votre produit n'a pas pu être ajouté. Veuillez réessayer plus tard.",
         "button3": "Fermer"
+    },
+    "comment_list": {
+        "title": "Aucun commentaire pour ce produit."
     }
 }

@@ -128,5 +128,8 @@
         "failure_title": "An error occurred.",
         "failure_text": "Your product could not be added. Please try again later.",
         "button3": "Close"
+    },
+    "comment_list": {
+        "title": "No comment for this product."
     }
 }
