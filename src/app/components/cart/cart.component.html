@@ -1,31 +1,52 @@
-<div class="container">
+<div class="container" *transloco="let t; read:'cart'">
     <div class="row">
-        <h2>Mon Panier</h2> 
+        <h2>{{t("mycart")}}</h2> 
       <div class="col-8">
-        <h4 *ngIf="cartItems.length == 0">Votre panier est vide.</h4>
+        <h4 *ngIf="cartItems.length == 0">{{t("emptycart")}}</h4>
         <div *ngFor="let item of cartItems" class="cart-item">
           <img [src]="productMap.get(item.productID)!.imagePath" alt="Product Image" class="product-image">
           <div class="product-details ms-3">
             <h4 class="item-name"><a class="text-decoration-none text-dark" [routerLink]="['/product/', item.productID]">{{ productMap.get(item.productID)!.name }}</a></h4>
-            <p>Vendeur : {{ productMap.get(item.productID)!.seller }}</p>
-            <p class="price mb-0">Prix : {{ productMap.get(item.productID)!.price | money }}</p>
+            <p>{{t("seller")}}{{ productMap.get(item.productID)!.seller }}</p>
+            <p class="price mb-0">{{t("price")}}{{ productMap.get(item.productID)!.price | money }}</p>
           </div>
-          <button class="btn btn-danger mb-2 me-2 delete-btn" (click)="removeItem(item)">Supprimer</button>
+          <button class="btn btn-danger mb-2 me-2 delete-btn" (click)="removeItem(item)">{{t("delete")}}</button>
         </div>
       </div>
       <div class="col-4">
         <div class="cart-summary">
-          <h4>Récapitulatif du Panier</h4>
+          <h4>{{t("summary")}}</h4>
           <ul>
             <li *ngFor="let item of cartItems">
               {{ productMap.get(item.productID)!.name }} : {{ productMap.get(item.productID)!.price | money }}
             </li>
           </ul>
           <hr>
-          <h4>Total: {{ getTotalPrice() | money }}</h4>
-          <button class="btn btn-primary" (click)="purchase()">Commander</button>
+          <h4>{{t("total")}}{{ getTotalPrice() | money }}</h4>
+          <button class="btn btn-primary" [disabled]="cartItems.length == 0" (click)="purchase()">{{t("ordernow")}}</button>
         </div>
       </div>
     </div>
+
+    <dialog id="successDialog" #successDialog>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{t("success_title")}}</h5>
+          <p class="card-text">{{t("success_text")}}</p>
+          <button class="btn btn-primary" routerLink="/transactions">{{t("see_orders")}}</button>
+
+        </div>
+      </div>
+    </dialog>
+  
+    <dialog id="errorDialog" #errorDialog>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{t("error_title")}}</h5>
+          <p class="card-text">{{t("error_text")}}</p>
+          <button class="btn btn-primary" onclick="errorDialog.close()">{{t("close")}}</button>
+        </div>
+      </div>
+    </dialog>
   </div>
   

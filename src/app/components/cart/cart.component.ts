@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
 import { CartItem } from 'src/app/classes/cart-item';
@@ -17,6 +17,9 @@ export class CartComponent {
   cartItems: CartItem[] = [];
   productMap = new Map<string, Product>();
   user: User | null = null;
+
+  @ViewChild("successDialog") sucessDialog!: ElementRef;
+  @ViewChild("errorDialog") errorDialog!: ElementRef;
 
   constructor(
     private auth: AuthService,
@@ -75,9 +78,13 @@ export class CartComponent {
   async purchase() {
     this.cartService
       .purchaseCart(this.user!, this.cartItems)
-      .then(() => {
-        this.fetchProductsInCart();
+      .then(async () => {
+        await this.fetchProductsInCart();
+        this.sucessDialog.nativeElement.showModal();
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        this.errorDialog.nativeElement.showModal();
+        console.log(error)
+      });
   }
 }

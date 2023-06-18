@@ -3,3 +3,7 @@
     box-shadow: 0.15rem 0.15rem 0 0 black;
     white-space: nowrap;
 }
+
+td{
+    cursor: pointer;
+}

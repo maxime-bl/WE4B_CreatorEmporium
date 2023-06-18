@@ -24,7 +24,7 @@
                 <td>{{ tr.quantity }}</td>
                 <td>{{ tr.sellerName }}</td>
                 <td>{{ tr.username }}</td>
-                <td>{{ tr.totalPrice }}</td>
+                <td>{{ number(tr.totalPrice) | money }}</td>
             </tr>
         </ng-container>
     </tbody>

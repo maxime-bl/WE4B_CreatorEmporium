@@ -1,4 +1,25 @@
 {
+    "cart":{
+        "mycart": "Mon Panier",
+        "emptycart": "Votre panier est vide",
+        "seller": "Vendeur : ",
+        "price": "Prix : ",
+        "delete": "Supprimer",
+        "summary": "Récapitulatif du Panier",
+        "total": "Total: ",
+        "ordernow": "Commander",
+        "success_title": "Votre commmande a bien été enregistrée",
+        "success_text": "Nous vous remercions pour votre achat. A très bientôt sur Creator Emporium !",
+        "error_title":"Une erreur s'est produite",
+        "error_text":"Il semblerait qu'un ou plusieurs produits de votre commande ne soient plus en stock. Veuillez retirer ce(s) produit(s) de votre panier pour continuer",
+        "close": "Fermer",
+        "see_orders": "Voir mes commandes"
+    },
+    "product_modal":{
+        "title": "Votre produit a bien été ajouté au panier",
+        "gotocart": "Aller au panier",
+        "continue": "Continuer mes achats"
+    },
     "nav": {
         "market": "Produits",
         "orders": "Mes commandes",

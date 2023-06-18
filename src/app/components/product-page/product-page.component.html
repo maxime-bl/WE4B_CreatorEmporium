@@ -57,13 +57,12 @@
     <app-comment-list></app-comment-list>
 </div>
 
-<dialog id="successDialog" #successDialog>
+<dialog id="successDialog" *transloco="let t; read:'product_modal'" #successDialog>
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Votre produit a bien été ajouté au panier</h5>
-        <!-- <p class="card-text">Vous pouvez continuer vos achat</p> -->
-        <button class="btn btn-primary me-3" [routerLink]="['/cart']">Aller au panier</button>
-        <button class="btn btn-secondary" onclick="successDialog.close()">Continuer mes achats</button>
+        <h5 class="card-title">{{t("title")}}</h5>
+        <button class="btn btn-primary me-3" [routerLink]="['/cart']">{{t("gotocart")}}</button>
+        <button class="btn btn-secondary" onclick="successDialog.close()">{{t("continue")}}</button>
       </div>
     </div>
   </dialog>

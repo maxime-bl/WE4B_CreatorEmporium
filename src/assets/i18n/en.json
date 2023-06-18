@@ -1,4 +1,25 @@
 {
+    "cart":{
+        "mycart": "My Cart",
+        "emptycart": "Your cart is empty",
+        "seller": "Seller : ",
+        "price": "Price : ",
+        "delete": "Delete",
+        "summary": "Cart Summary",
+        "total": "Total: ",
+        "ordernow": "Order now",
+        "success_title": "Your order has been registered",
+        "success_text": "Thank you for your purchase. See you soon on Creator Emporium!",
+        "error_title":"An error has occurred",
+        "error_text":"It seems that one or more products of your order are out of stock. Please remove the product(s) from your shopping cart to continue.",
+        "close": "Close",
+        "see_orders": "View my orders"
+    },
+    "product_modal":{
+        "title": "Your product has been added to the cart",
+        "gotocart": "Go to cart",
+        "continue": "Continue shopping"
+    },
     "nav": {
         "market": "Market",
         "orders": "My Orders",

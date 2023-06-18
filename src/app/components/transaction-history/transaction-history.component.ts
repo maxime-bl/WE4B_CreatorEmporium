@@ -40,4 +40,8 @@ export class TransactionHistoryComponent {
       });
     }
   }
+
+  number(val: any){
+    return Number(val);
+  }
 }
