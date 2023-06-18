@@ -140,5 +140,8 @@
         "price": "Prix",
         "button_apply": "Appliquer les filtres",
         "button_reset": "Réinitialiser"
+    },
+    "product_card": {
+        "seller": "Vendu par "
     }
 }

@@ -141,5 +141,8 @@
         "price": "Price",
         "button_apply": "Apply Filters",
         "button_reset": "Reset"
+    },
+    "product_card": {
+        "seller": "Selled by "
     }
 }
