@@ -322,4 +322,53 @@ export default class DatabaseService {
       })
     );
   }
+
+  getProductByUserId(id: string): Observable<Product[]> {
+    const productsRef = collection(this.db, 'products');
+    const q = query(productsRef, where('userID', '==', id));
+
+    return from(getDocs(q)).pipe(
+      map((querySnapshot: QuerySnapshot) => {
+        const products: Product[] = [];
+        querySnapshot.forEach((doc) => {
+          const data = doc.data() as ProductData;
+          const product = new Product(
+            doc.id,
+            data.seller,
+            data.categoryID,
+            data.name,
+            data.price,
+            data.quantity,
+            data.description,
+            data.imagePath
+          );
+          products.push(product);
+        });
+        return products;
+      })
+    );
+  }
+
+  async updateProduct(productID: string, quantity: number) {
+    const productRef = collection(this.db, 'products');
+    const q = query(
+      productRef,
+      where('__name__', '==', productID)
+    );
+
+    try {
+      const querySnapshot = await getDocs(q);
+      if (querySnapshot.empty) {
+        throw new Error('Product not found');
+      }
+
+      const itemRef = querySnapshot.docs[0].ref;
+      updateDoc(itemRef, {
+        quantity: quantity,
+      });
+      return productID;
+    } catch (error) {
+      throw error;
+    }
+  }
 }
