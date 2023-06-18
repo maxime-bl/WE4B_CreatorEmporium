@@ -296,9 +296,9 @@ export default class DatabaseService {
   /* Transaction functions */
 
   getTransactionByUserID(userID: string): Observable<Transaction[]>{
-    const transactionsRef = collection(this.db, 'orders');
+    const transactionsRef = collection(this.db, 'transactions');
 
-    const q = query(transactionsRef, where('userID', '==', userID));
+    const q = query(transactionsRef, where('userID', '==', userID), orderBy('date', 'desc'));
 
     return from(getDocs(q)).pipe(
       map((querySnapshot: QuerySnapshot) => {
@@ -313,9 +313,9 @@ export default class DatabaseService {
   }
 
   getTransactionBySellerID(sellerID: string): Observable<Transaction[]>{
-    const transactionsRef = collection(this.db, 'orders');
+    const transactionsRef = collection(this.db, 'transactions');
 
-    const q = query(transactionsRef, where('sellerID', '==', sellerID));
+    const q = query(transactionsRef, where('sellerID', '==', sellerID), orderBy('date', 'desc'));
 
     return from(getDocs(q)).pipe(
       map((querySnapshot: QuerySnapshot) => {
