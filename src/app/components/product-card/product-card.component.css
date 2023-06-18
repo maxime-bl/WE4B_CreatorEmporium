@@ -19,6 +19,7 @@
   aspect-ratio: 1 /1;
   height: var(--card-width);
   object-fit: cover;
+  border-bottom: 1px black solid;
 }
 
 a {
@@ -26,5 +27,9 @@ a {
 }
 
 .card {
-  border-color: black;
+  border: 2px solid black;
+}
+
+.list-group{
+  border-top: 1px black solid;
 }
