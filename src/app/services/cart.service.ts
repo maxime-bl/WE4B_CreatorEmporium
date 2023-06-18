@@ -33,8 +33,6 @@ export class CartService {
   ) {
     this.db = this.dbService.getDbRef();
     this.cartItemsRef = collection(this.db, 'cart-items');
-
-    console.log('Hallo Guten Tag');
   }
 
   addToCart(userID: string, productID: string, quantity: number) {

@@ -1,5 +1,5 @@
 <main class="form-signin w-100 m-auto d-flex justify-content-center align-items-center height">
-  <form class="background w-25 p-4" [formGroup]="loginForm" (ngSubmit)="submitForm()">
+  <form class="background p-4" [formGroup]="loginForm" (ngSubmit)="submitForm()">
     <h1 class="h3 mb-3 fw-normal title" *transloco="let t; read:'login'">{{t("title")}}</h1>
     <div class="alert alert-danger" role="alert" [hidden]="this.errorMsg == ''">{{errorMsg}}</div>
     <div class="form-floating pb-2">
@@ -14,7 +14,7 @@
     <button [disabled]="loading" class="btn btn-tertiary w-100 py-2" type="submit" *transloco="let t; read:'login'">
       {{t("button")}}
     </button>
-    <p *transloco="let t; read:'login'">
+    <p class="mt-2" *transloco="let t; read:'login'">
       {{t("reg_question")}}
       <a class="link" routerLink="/register" [queryParams]="{'redirectUrl': redirectUrl}"
         *transloco="let t; read:'login'">{{t("register")}}</a>

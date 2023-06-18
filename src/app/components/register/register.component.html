@@ -1,5 +1,5 @@
 <div class="form-signin w-100 m-auto d-flex justify-content-center align-items-center height">
-  <form class="background p-4 w-25" [formGroup]="registerForm" (ngSubmit)="submitForm()">
+  <form class="background p-4" [formGroup]="registerForm" (ngSubmit)="submitForm()">
     <h1 class="h3 mb-3 fw-normal title" *transloco="let t; read:'register'">{{t("title")}}</h1>
     <h2>{{ errorMsg }}</h2>
 

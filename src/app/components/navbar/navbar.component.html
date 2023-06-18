@@ -1,11 +1,11 @@
 <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-between px-4 py-3">
-  <div class="d-flex align-items-center col-md-3 mb-md-0">
+  <div class="d-flex align-items-center col-lg-3 mb-lg-0">
     <a routerLink="/" class="d-inline-flex link-body-emphasis text-decoration-none ">
       <img class="logo" src="../../../assets/Logo.png" alt="Creator Emporium Logo">
     </a>
   </div>
 
-  <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+  <ul class="nav col-12 col-lg-auto mb-2 justify-content-center mb-lg-0">
     <li><a routerLink="/market" class="nav-link px-2 link-dark" *transloco="let t; read:'nav'">{{t("market")}}</a></li>
     
     <li><a routerLink="/transactions" [hidden]="currentUser == null || currentUser.isSeller" class="nav-link px-2 link-dark" *transloco="let t; read:'nav'">{{t("orders")}}</a></li>
@@ -17,7 +17,7 @@
     <li><a routerLink="/more-info" class="nav-link px-2 link-dark" *transloco="let t; read:'nav'">{{t("about")}}</a></li>
   </ul>
 
-  <div class="col-md-3 text-end">
+  <div class="col-lg-3 text-end">
     <div class="d-flex flex-nowrap align-items-center justify-content-md-end w-100">
       <app-language-selector class="me-2 mt-1"></app-language-selector>
         <button routerLink="/login" [hidden]="currentUser != null" type="button" class="btn btn-secondary me-2"
