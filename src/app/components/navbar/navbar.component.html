@@ -8,10 +8,10 @@
   <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
     <li><a routerLink="/market" class="nav-link px-2 link-dark" *transloco="let t; read:'nav'">{{t("market")}}</a></li>
     
-    <li><a routerLink="/orders" [hidden]="currentUser == null || currentUser.isSeller" class="nav-link px-2 link-dark" *transloco="let t; read:'nav'">{{t("orders")}}</a></li>
+    <li><a routerLink="/transactions" [hidden]="currentUser == null || currentUser.isSeller" class="nav-link px-2 link-dark" *transloco="let t; read:'nav'">{{t("orders")}}</a></li>
     <li><a routerLink="/cart" [hidden]="currentUser == null || currentUser.isSeller" class="nav-link px-2 link-dark" *transloco="let t; read:'nav'">{{t("cart")}}</a></li>
 
-    <li><a routerLink="/sales" [hidden]="currentUser == null || !currentUser.isSeller" class="nav-link px-2 link-dark" *transloco="let t; read:'nav'">{{t("sales")}}</a></li>
+    <li><a routerLink="/transactions" [hidden]="currentUser == null || !currentUser.isSeller" class="nav-link px-2 link-dark" *transloco="let t; read:'nav'">{{t("sales")}}</a></li>
     <li><a routerLink="/product-management" [hidden]="currentUser == null || !currentUser.isSeller" class="nav-link px-2 link-dark" *transloco="let t; read:'nav'">{{t("product-management")}}</a></li>
 
     <li><a routerLink="/more-info" class="nav-link px-2 link-dark" *transloco="let t; read:'nav'">{{t("about")}}</a></li>
