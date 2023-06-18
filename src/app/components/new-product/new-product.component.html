@@ -1,31 +1,31 @@
-<div class="container mb-4">
-  <h1>Ajout de produit</h1>
+<div class="container mb-4" *transloco="let t; read:'new_product'">
+  <h1>{{t('title')}}</h1>
   <form [formGroup]="productForm">
     <div class="form-group">
-      <label for="name">Nom du produit</label>
+      <label for="name">{{t('product_name')}}</label>
       <input
         type="text"
         class="form-control"
         id="name"
-        placeholder="Entrez le nom du produit"
+        placeholder="{{t('placeholder_prod')}}"
         formControlName="name"
       />
-      <p class="error" [hidden]="isInputValid('name')">Le produit doit comporter un nom</p>
+      <p class="error" [hidden]="isInputValid('name')">{{t('product_error')}}</p>
     </div>
     <div class="form-group">
-      <label for="description">Description</label>
+      <label for="description">{{t('description')}}</label>
       <textarea
         class="form-control"
         id="description"
         rows="4"
-        placeholder="Entrez la description du produit"
+        placeholder="{{t('placeholder_desc')}}"
         formControlName="description"
       ></textarea>
-      <p class="error" [hidden]="isInputValid('description')">Le produit doit comporter une description</p>
+      <p class="error" [hidden]="isInputValid('description')">{{t('error_desc')}}</p>
     </div>
 
     <div>
-      <label for="imgFile">Ajouter une image</label>
+      <label for="imgFile">{{t('image')}}</label>
       <input
         class="form-control"
         type="file"
@@ -34,51 +34,51 @@
         accept=".png,.jpg,.jpeg"
         (change)="onFileSelected($event)"
       />
-      <p class="error" [hidden]="isImageValid || !isTouched('imgFile')">Le produit doit comporter une image (format png, jpg, ou jpeg)</p>
+      <p class="error" [hidden]="isImageValid || !isTouched('imgFile')">{{t('error_image')}}</p>
     </div>
 
     <div class="row">
       <div class="col">
-        <label for="price">Prix</label>
+        <label for="price">{{t('price')}}</label>
         <div class="input-group">
           <input
             type="text"
             class="form-control"
             id="price"
-            placeholder="Entrez un prix"
+            placeholder="{{t('placeholder_price')}}"
             formControlName="price"
             (keyup)="onPriceChanged()"
           />
           <div class="input-group-append">
             <span class="input-group-text">€</span>
           </div>
-          <p class="error" [hidden]="isPriceValid || !isTouched('price')" >Le prix est incorrect</p>
+          <p class="error" [hidden]="isPriceValid || !isTouched('price')" >{{t('error_price')}}</p>
         </div>
       </div>
       <div class="form-group col">
-        <label for="quantiteProduit">Quantité en stock</label>
+        <label for="quantiteProduit">{{t('quantity')}}</label>
         <input
           type="number"
           class="form-control"
           id="quantiteProduit"
-          placeholder="Entrez la quantité disponible"
+          placeholder="{{t('placeholder_quant')}}"
           formControlName="quantity"
           (change)="onQuantityChanged()"
           (keyup)="onQuantityChanged()"
         />
-        <p class="error" [hidden]="isQuantityValid || !isTouched('quantity')">La quantité est incorrecte</p>
+        <p class="error" [hidden]="isQuantityValid || !isTouched('quantity')">{{t('error_quant')}}</p>
       </div>
     </div>
 
     <div>
-      <label for="category">Catégorie produit</label>
+      <label for="category">{{t('category')}}</label>
       <select class="custom-select" id="category" formControlName="category">
-        <option value="" selected>Choisissez une catégorie</option>
+        <option value="" selected>{{t('category_select')}}</option>
         <option *ngFor="let cat of categoryList" value="{{ cat.categoryID }}">
           {{ cat.name }}
         </option>
       </select>
-      <p class="error" [hidden]="isInputValid('category')">Veuillez sélectionner une catégorie</p>
+      <p class="error" [hidden]="isInputValid('category')">{{t('error_cat')}}</p>
     </div>
 
     <button
@@ -87,17 +87,17 @@
       [disabled]="!isFormValid() || isLoading"
       class="btn btn-primary px-4 py-2 mt-4"
     >
-      Ajouter le produit
+    {{t('button')}}
     </button>
   </form>
 
   <dialog id="successDialog" #successDialog>
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Votre produit a bien été ajouté !</h5>
-        <p class="card-text">Vous pouvez dès maintenant consulter la page de votre produit en cliquant sur le bouton ci-dessous</p>
-        <button class="btn btn-primary me-3" [routerLink]="['/product', productID]">Voir la page du produit</button>
-        <button class="btn btn-secondary" routerLink="/">Revenir à l'accueil</button>
+        <h5 class="card-title">{{t('successful_title')}}</h5>
+        <p class="card-text">{{t('successful_text')}}</p>
+        <button class="btn btn-primary me-3" [routerLink]="['/product', productID]">{{t('button1')}}</button>
+        <button class="btn btn-secondary" routerLink="/">{{t('button2')}}</button>
       </div>
     </div>
   </dialog>
@@ -105,9 +105,9 @@
   <dialog id="errorDialog" #errorDialog>
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Une erreur s'est produite</h5>
-        <p class="card-text">Votre produit n'a pas pu être ajouté. Veuillez réessayer plus tard</p>
-        <button class="btn btn-primary" onclick="errorDialog.close()">Fermer</button>
+        <h5 class="card-title">{{t('failure_title')}}</h5>
+        <p class="card-text">{{t('failure_text')}}</p>
+        <button class="btn btn-primary" onclick="errorDialog.close()">{{t('button3')}}</button>
       </div>
     </div>
   </dialog>

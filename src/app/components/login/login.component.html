@@ -3,11 +3,11 @@
     <h1 class="h3 mb-3 fw-normal title" *transloco="let t; read:'login'">{{t("title")}}</h1>
     <div class="alert alert-danger" role="alert" [hidden]="this.errorMsg == ''">{{errorMsg}}</div>
     <div class="form-floating pb-2">
-      <input formControlName="email" type="email" class="form-control" placeholder="name@example.com" />
+      <input formControlName="email" type="email" class="form-control" *transloco="let t; read:'login'" placeholder="{{t('placeholder_email')}}" />
       <label for="floatingInput" *transloco="let t; read:'login'">{{t("email")}}</label>
     </div>
     <div class="form-floating pb-4">
-      <input formControlName="password" type="password" class="form-control" placeholder="Password" />
+      <input formControlName="password" type="password" class="form-control" *transloco="let t; read:'login'" placeholder="{{t('placeholder_pwd')}}" />
       <label for="floatingPassword" *transloco="let t; read:'login'">{{t("passwd")}}</label>
     </div>
 
