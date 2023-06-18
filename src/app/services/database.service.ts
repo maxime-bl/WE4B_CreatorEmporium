@@ -15,6 +15,7 @@ import {
   addDoc,
   Query,
   updateDoc,
+  deleteDoc,
   orderBy,
 } from '@angular/fire/firestore';
 
@@ -367,6 +368,27 @@ export default class DatabaseService {
         quantity: quantity,
       });
       return productID;
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async removeProduct(productID: string) {
+    const productRef = collection(this.db, 'products');
+    const q = query(
+      productRef,
+      where('__name__', '==', productID)
+    );
+
+    try {
+      const querySnapshot = await getDocs(q);
+      if (querySnapshot.empty) {
+        throw new Error('Product not found');
+      }
+
+      const itemRef = querySnapshot.docs[0].ref;
+      await deleteDoc(itemRef);
+      location.reload();
     } catch (error) {
       throw error;
     }

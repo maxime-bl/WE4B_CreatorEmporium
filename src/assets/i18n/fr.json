@@ -146,5 +146,21 @@
     },
     "product_list": {
         "no_prod": "Aucun produit ne correspond à votre recherche."
+    },
+    "edit_form": {
+        "seller": "Vendeur : ",
+        "quantity": "Nouvelle quantité :",
+        "placeholder_quant": "Entrez la quantité disponible",
+        "error_quant": "La quantité est incorrecte.",
+        "button": "Modifier",
+        "remove": "Supprimer",
+        "successful_title": "Votre produit a été modifié avec succès !",
+        "successful_text": "Vous pouvez maintenant consulter la page de votre produit en cliquant sur le bouton ci-dessous.",
+        "button1": "Voir la page du produit",
+        "button2": "Retour à la page d'accueil",
+        "failure_title": "Une erreur s'est produite.",
+        "failure_text": "Votre produit n'a pas pu être modifié. Veuillez réessayer ultérieurement.",
+        "button3": "Fermer"
     }
+    
 }

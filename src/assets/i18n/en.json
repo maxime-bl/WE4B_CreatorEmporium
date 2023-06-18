@@ -80,7 +80,7 @@
     },
     "transactions": {
         "title1": "No history",
-        "title2": "Selled products:",
+        "title2": "Sold products:",
         "title3": "Bought products:",
         "col1": "Date",
         "col2": "Product name",
@@ -143,7 +143,7 @@
         "button_reset": "Reset"
     },
     "product_card": {
-        "seller": "Selled by "
+        "seller": "Sold by "
     },
     "product_list": {
         "no_prod": "No products match your search."
@@ -154,12 +154,13 @@
         "placeholder_quant":"Enter the available quantity",
         "error_quant":"The quantity is incorrect.",
         "button": "Edit",
-        "successful_title": "Your product has been successfully added!",
+        "remove": "Remove",
+        "successful_title": "Your product has been successfully edited!",
         "successful_text": "You can now view your product's page by clicking the button below.",
         "button1": "View Product Page",
         "button2": "Go Back to Homepage",
         "failure_title": "An error occurred.",
-        "failure_text": "Your product could not be added. Please try again later.",
+        "failure_text": "Your product could not be edited. Please try again later.",
         "button3": "Close"
     }
 }

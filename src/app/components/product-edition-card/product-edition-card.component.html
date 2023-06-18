@@ -1,4 +1,4 @@
-<div class="card" style="width: auto;" *transloco="let t; read:'edit_form'">
+<div class="card mt-4" style="width: auto;" *transloco="let t; read:'edit_form'">
 
     <img [routerLink]="['/product', product.productID]" src="{{product.imagePath}}" class="card-img-top"
         alt="Product image">
@@ -25,9 +25,9 @@
                 class="btn btn-primary px-4 py-2 mt-4">
                 {{t('button')}}
             </button>
-            <button type="submit" (click)="isFormValid()"
+            <button type="submit" (click)="remove()"
                 class="btn btn-primary px-4 py-2 mt-4" style="background-color: red;">
-                Delete
+                {{t("remove")}}
             </button>
         </div>
     </form>

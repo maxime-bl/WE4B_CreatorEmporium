@@ -51,8 +51,14 @@ export class ProductEditionCardComponent {
     }
   }
 
-  delete() {
-    
+  remove() {
+    this.isLoading = true;
+    this.dbService.removeProduct(this.product.productID).catch((error) => {
+      console.log(error);
+      this.errorDialog.nativeElement.showModal();
+      this.isLoading = false;
+    })
+    this.isLoading = false;
   }
 
   onQuantityChanged() {
