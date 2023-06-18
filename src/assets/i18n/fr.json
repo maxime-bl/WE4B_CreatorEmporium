@@ -70,5 +70,16 @@
         "elem5": "Retours et remboursements : Nous avons mis en place une politique de retour complète pour garantir votre satisfaction. Si vous rencontrez des problèmes avec votre achat, veuillez contacter notre équipe d'assistance clientèle dans le délai désigné spécifié dans notre politique de retour. Veuillez noter que certains produits, tels que les articles personnalisés ou les produits périssables, peuvent ne pas être éligibles au retour.",
         "text2": "En procédant à votre achat, vous reconnaissez avoir lu et compris les conditions générales mentionnées ci-dessus. Si vous avez des questions ou des préoccupations, n'hésitez pas à contacter notre équipe d'assistance clientèle pour obtenir une aide supplémentaire.",
         "button": "Fermer"
+    },
+    "transactions": {
+        "title1": "Aucun historique",
+        "title2": "Produits vendus :",
+        "title3": "Vous avez achetés :",
+        "col1": "Date",
+        "col2": "Nome du produit",
+        "col3": "Quantité",
+        "col4": "Nom du vendeur",
+        "col5": "Nom de l'acheteur",
+        "col6": "Prix total"
     }
 }

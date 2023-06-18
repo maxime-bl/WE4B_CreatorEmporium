@@ -71,5 +71,16 @@
         "elem5": "Returns and Refunds: We have a comprehensive returns policy in place to ensure your satisfaction. If you encounter any issues with your purchase, please contact our customer support team within the designated timeframe specified in our return policy. Please note that certain products, such as personalized items or perishable goods, may not be eligible for return.",
         "text2": "By proceeding with your purchase, you acknowledge that you have read and understood the above terms and conditions. If you have any questions or concerns, please do not hesitate to reach out to our customer support team for further assistance.",
         "button": "Close"
+    },
+    "transactions": {
+        "title1": "No history",
+        "title2": "Selled products:",
+        "title3": "Bought products:",
+        "col1": "Date",
+        "col2": "Product name",
+        "col3": "Quantity",
+        "col4": "Seller name",
+        "col5": "Buyer name",
+        "col6": "Total price"
     }
 }

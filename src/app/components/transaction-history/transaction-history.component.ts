@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { Transaction } from 'src/app/classes/transaction';
 import { User } from 'src/app/classes/user';
 import DatabaseService from 'src/app/services/database.service';
@@ -17,12 +17,12 @@ export class TransactionHistoryComponent {
   isLoading: boolean = true;
 
   constructor(private auth: AuthService, private dbService: DatabaseService) {
-    this.auth.getCurrentUserAsObservable().subscribe(
-      res => {
-        this.currentUser = res;
-        this.fetchTransactions();
-      }
-    )
+    this.currentUser = auth.getCurrentUser();
+    this.fetchTransactions();
+    this.auth.getCurrentUserAsObservable().subscribe(res => {
+      this.currentUser = res;
+      this.fetchTransactions();
+    });
   }
 
   fetchTransactions() {
