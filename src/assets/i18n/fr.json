@@ -86,5 +86,17 @@
         "col4": "Nom du vendeur",
         "col5": "Nom de l'acheteur",
         "col6": "Prix total"
+    },
+    "comment_form": {
+        "pre_title": "Ecrire un commentaire",
+        "title": "Titre",
+        "placeholder_title": "Entrez le titre du commentaire",
+        "title_error": "Le commentaire doit comporter un titre.",
+        "description": "Description",
+        "placeholder_desc": "Entrez la description du produit",
+        "grade": "Note",
+        "choose_grade": "Choisissez une note",
+        "grade_error": "Veuillez sélectionner une note",
+        "button": "Envoyer le commentaire"
     }
 }

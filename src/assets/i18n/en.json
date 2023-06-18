@@ -87,5 +87,17 @@
         "col4": "Seller name",
         "col5": "Buyer name",
         "col6": "Total price"
-    }
+    },
+    "comment_form": {
+        "pre_title": "Write a comment",
+        "title": "Title",
+        "placeholder_title": "Enter the comment title",
+        "title_error": "The comment must have a title.",
+        "description": "Description",
+        "placeholder_desc": "Enter the product description",
+        "grade": "Rating",
+        "choose_grade": "Choose a rating",
+        "grade_error": "Please select a rating",
+        "button": "Submit Comment"
+        }
 }
