@@ -1,18 +1,18 @@
-<div class="d-flex mx-4 mt-1">
+<div class="d-flex mx-4 mt-1" *transloco="let t; read:'market'">
   <div>
     <div class="filters-container px-4 py-3 mb-3 me-1">
-      <h5 class="mb-0 mt-1 mb-1">Mots-clés</h5>
+      <h5 class="mb-0 mt-1 mb-1">{{t('key_word')}}</h5>
       <form class="form-inline">
-        <input [(ngModel)]="keywordsField" (keyup)="filterByKeyword()" class="form-control mr-sm-2" type="text" placeholder="Search" name="keywords"/>
+        <input [(ngModel)]="keywordsField" (keyup)="filterByKeyword()" class="form-control mr-sm-2" type="text" placeholder="{{t('placeholder_kword')}}" name="keywords"/>
       </form>
     </div>
 
     <div class="filters-container px-4 py-3">
-      <h5 class="mb-0 mt-1 mb-1">Catégorie</h5>
+      <h5 class="mb-0 mt-1 mb-1">{{t('category')}}</h5>
       <div class="form-check mx-2">
         <input class="form-check-input" type="radio" name="categories" id="all" checked value="all" [(ngModel)]="selectedCategory">
         <label class="form-check-label" for="flexRadioDefault2">
-          Toutes les catégories
+          {{t('category_button')}}
         </label>
       </div>
       <div class="form-check mx-2" *ngFor="let cat of categories">
@@ -22,14 +22,14 @@
         </label>
       </div>
 
-      <h5 class="mb-0 mt-2 mb-1">Vendeur</h5>
+      <h5 class="mb-0 mt-2 mb-1">{{t('seller')}}</h5>
       <div class="form-check mx-2" *ngFor="let seller of sellers; let i = index">
         <input class="form-check-input" type="checkbox" id="{{ seller }}" [(ngModel)]="selectedSellers[i]" />
         <label class="form-check-label" for="{{ seller }}"> {{ seller }}</label>
       </div>
 
 
-      <h5 class="mb-0 mt-2 mb-1">Prix</h5>
+      <h5 class="mb-0 mt-2 mb-1">{{t('price')}}</h5>
       <div class="d-flex justify-content-between">
         <div class="input-group" style="width: 120px">
           <input type="text" class="form-control" placeholder="Min" [(ngModel)]="minField"/>
@@ -46,10 +46,10 @@
       </div>
 
       <button class="btn btn-primary w-100 my-1 mt-3" type="submit" (click)="applyFilter()">
-        Appliquer les filtres
+        {{t('button_apply')}}
       </button>
       <button type="button" class="btn btn-outline-primary w-100 my-1" (click)="clearFilters()">
-        Réinitialiser
+        {{t('button_reset')}}
       </button>
     </div>
   </div>

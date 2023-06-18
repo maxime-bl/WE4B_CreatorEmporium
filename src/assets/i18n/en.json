@@ -131,5 +131,15 @@
     },
     "comment_list": {
         "title": "No comment for this product."
+    },
+    "market": {
+        "key_word": "Keywords",
+        "placeholder_kword": "Search",
+        "category": "Category",
+        "category_button": "All Categories",
+        "seller": "Seller",
+        "price": "Price",
+        "button_apply": "Apply Filters",
+        "button_reset": "Reset"
     }
 }

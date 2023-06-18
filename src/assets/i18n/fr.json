@@ -106,8 +106,8 @@
         "placeholder_prod": "Entrez le nom du produit",
         "product_error": "Le produit doit comporter un nom.",
         "description": "Description",
-        "placeholder_desc":"Entrez la description du produit",
-        "error_desc":  "Le produit doit comporter une description.",
+        "placeholder_desc": "Entrez la description du produit",
+        "error_desc": "Le produit doit comporter une description.",
         "image": "Ajoutez une image",
         "error_image": "Le produit doit comporter une image (format png, jpg, ou jpeg).",
         "price": "Prix",
@@ -130,5 +130,15 @@
     },
     "comment_list": {
         "title": "Aucun commentaire pour ce produit."
+    },
+    "market": {
+        "key_word": "Mots-clés",
+        "placeholder_kword": "Recherche",
+        "category": "Catégorie",
+        "category_button": "Toutes les catégories",
+        "seller": "Vendeur",
+        "price": "Prix",
+        "button_apply": "Appliquer les filtres",
+        "button_reset": "Réinitialiser"
     }
 }
