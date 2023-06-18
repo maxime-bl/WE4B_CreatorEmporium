@@ -145,7 +145,8 @@
         "seller": "Vendu par "
     },
     "product_list": {
-        "no_prod": "Aucun produit ne correspond à votre recherche."
+        "no_prod": "Aucun produit ne correspond à votre recherche.",
+        "add": "Nouveau produit"
     },
     "edit_form": {
         "seller": "Vendeur : ",

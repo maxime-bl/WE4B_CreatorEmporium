@@ -146,7 +146,8 @@
         "seller": "Sold by "
     },
     "product_list": {
-        "no_prod": "No products match your search."
+        "no_prod": "No products match your search.",
+        "add": "New product"
     },
     "edit_form": {
         "seller": "Seller: ",
