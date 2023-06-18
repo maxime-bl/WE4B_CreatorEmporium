@@ -33,6 +33,7 @@ import { CommentComponent } from './components/comment/comment.component';
 import { CommentListComponent } from './components/comment-list/comment-list.component';
 import { CommentFormComponent } from './components/comment-form/comment-form.component';
 import { TransactionHistoryComponent } from './components/transaction-history/transaction-history.component';
+import { CartService } from './services/cart.service';
 import { ProductManagementComponent } from './components/product-management/product-management.component';
 import { ProductEditionCardComponent } from './components/product-edition-card/product-edition-card.component';
 
@@ -76,7 +77,8 @@ import { ProductEditionCardComponent } from './components/product-edition-card/p
     FirebaseService,
     DatabaseService,
     AuthService,
-    StorageService    
+    StorageService,
+    CartService   
   ],
   bootstrap: [AppComponent]
 })

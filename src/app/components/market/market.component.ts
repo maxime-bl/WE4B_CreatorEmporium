@@ -3,6 +3,7 @@ import DatabaseService from 'src/app/services/database.service';
 import { Product } from 'src/app/classes/product';
 import { Seller } from 'src/app/classes/seller';
 import { Category } from 'src/app/classes/category';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-market',
@@ -22,7 +23,7 @@ export class MarketComponent {
   maxField: string = '';
   keywordsField: string = "";
 
-  constructor(dbService: DatabaseService) {
+  constructor(dbService: DatabaseService, cartService: CartService) {
     this.dbService = dbService;
 
     dbService.getAllProducts().subscribe((res: Product[]) => {
