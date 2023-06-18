@@ -256,7 +256,9 @@ export default class DatabaseService {
 
   async addComment(productID: string, userID: string, username: string, title: string, text: string, grade: number) : Promise<boolean>{
     try {
-      await setDoc(doc(this.db, 'comments'), {
+      const commentsRef = collection(this.db, "comments");
+
+      await addDoc(commentsRef, {
         productID: productID,
         userID: userID,
         username: username,
@@ -271,5 +273,16 @@ export default class DatabaseService {
     }
   }
 
-  
+  async checkForExistingComment(userID: string, productID: string) : Promise<boolean> {
+    const commentsRef = collection(this.db, 'comments');
+    const q = query(commentsRef, where('productID', '==', productID), where('userID', '==', userID));
+
+    const querySnapshot = await getDocs(q);
+
+    if (querySnapshot.empty) {
+      return false;
+    } else {
+      return true
+    }
+  } 
 }

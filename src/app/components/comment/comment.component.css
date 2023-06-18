@@ -2,18 +2,26 @@
     border-color: black;
 }
 
+.border-start, .border-bottom {
+    border-color: black !important;
+}
+
 .username {
     margin: 0;
-    font-size: 18px;
+    font-size: 1/2rem;
     font-weight: 500;
 }
 
 .title {
     margin: 0;
-    font-size: 18px;
+    font-size: 1.2rem;
     font-weight: 600;
 }
 
 .grade {
-    min-width: 7vw !important;
+    width: 6rem;
+}
+
+p{
+    font-size: 1.1rem;
 }

@@ -35,10 +35,17 @@ export class AuthService {
     // action lorsque l'utilisateur se connecte/déconnecte
     onAuthStateChanged(this.auth, async (fbUser) => {
       if (fbUser) {
-        const displayName = await databaseService.getDisplayName(fbUser.uid);
-        const isSeller = displayName == '' ? false : true;
+        let displayName = await databaseService.getDisplayName(fbUser.uid);
+        let isSeller : boolean;
 
-        this.user = new User(fbUser.uid, fbUser.email, isSeller, displayName)
+        if (displayName == ''){
+          isSeller = false;
+          displayName = fbUser.email!.split("@")[0]
+        } else {
+          isSeller = true;
+        }
+
+        this.user = new User(fbUser.uid, fbUser.email!, isSeller, displayName)
 
         this.loggedIn = true;
       } else {

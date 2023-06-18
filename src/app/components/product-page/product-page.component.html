@@ -51,5 +51,8 @@
     </div>
 </div>
 <!-- TODO ajouter les commentaires ici -->
-<app-comment-list></app-comment-list>
-<app-comment-form></app-comment-form>
+<div class="container my-5">
+    <h3>Commentaires :</h3>
+    <app-comment-form [productID]="productId"></app-comment-form>
+    <app-comment-list></app-comment-list>
+</div>
