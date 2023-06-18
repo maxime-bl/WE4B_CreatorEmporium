@@ -64,7 +64,8 @@
         "stock2": " left",
         "CGV": "Read the terms and conditions of sale.",
         "add2cart": "Add to cart",
-        "buy": "Buy now"
+        "buy": "Buy now",
+        "comments": "Comments:"
     },
     "modal": {
         "title": "General terms and conditions of sale:",
@@ -127,5 +128,24 @@
         "failure_title": "An error occurred.",
         "failure_text": "Your product could not be added. Please try again later.",
         "button3": "Close"
+    },
+    "comment_list": {
+        "title": "No comment for this product."
+    },
+    "market": {
+        "key_word": "Keywords",
+        "placeholder_kword": "Search",
+        "category": "Category",
+        "category_button": "All Categories",
+        "seller": "Seller",
+        "price": "Price",
+        "button_apply": "Apply Filters",
+        "button_reset": "Reset"
+    },
+    "product_card": {
+        "seller": "Selled by "
+    },
+    "product_list": {
+        "no_prod": "No products match your search."
     }
 }

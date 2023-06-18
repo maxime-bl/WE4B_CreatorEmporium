@@ -63,7 +63,8 @@
         "stock2": " produits",
         "CGV": "Lire les conditions générales de ventes.",
         "add2cart": "Ajouter au panier",
-        "buy": "Acheter maintenant"
+        "buy": "Acheter maintenant",
+        "comments": "Commentaires :"
     },
     "modal": {
         "title": "Conditions générales de vente :",
@@ -105,8 +106,8 @@
         "placeholder_prod": "Entrez le nom du produit",
         "product_error": "Le produit doit comporter un nom.",
         "description": "Description",
-        "placeholder_desc":"Entrez la description du produit",
-        "error_desc":  "Le produit doit comporter une description.",
+        "placeholder_desc": "Entrez la description du produit",
+        "error_desc": "Le produit doit comporter une description.",
         "image": "Ajoutez une image",
         "error_image": "Le produit doit comporter une image (format png, jpg, ou jpeg).",
         "price": "Prix",
@@ -126,5 +127,24 @@
         "failure_title": "Une erreur s'est produite.",
         "failure_text": "Votre produit n'a pas pu être ajouté. Veuillez réessayer plus tard.",
         "button3": "Fermer"
+    },
+    "comment_list": {
+        "title": "Aucun commentaire pour ce produit."
+    },
+    "market": {
+        "key_word": "Mots-clés",
+        "placeholder_kword": "Recherche",
+        "category": "Catégorie",
+        "category_button": "Toutes les catégories",
+        "seller": "Vendeur",
+        "price": "Prix",
+        "button_apply": "Appliquer les filtres",
+        "button_reset": "Réinitialiser"
+    },
+    "product_card": {
+        "seller": "Vendu par "
+    },
+    "product_list": {
+        "no_prod": "Aucun produit ne correspond à votre recherche."
     }
 }
