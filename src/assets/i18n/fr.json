@@ -98,5 +98,33 @@
         "choose_grade": "Choisissez une note",
         "grade_error": "Veuillez sélectionner une note",
         "button": "Envoyer le commentaire"
+    },
+    "new_product": {
+        "title": "Ajout de produit",
+        "product_name": "Nom du produit",
+        "placeholder_prod": "Entrez le nom du produit",
+        "product_error": "Le produit doit comporter un nom.",
+        "description": "Description",
+        "placeholder_desc":"Entrez la description du produit",
+        "error_desc":  "Le produit doit comporter une description.",
+        "image": "Ajoutez une image",
+        "error_image": "Le produit doit comporter une image (format png, jpg, ou jpeg).",
+        "price": "Prix",
+        "placeholder_price": "Entrez un prix",
+        "error_price": "Le prix est incorrect.",
+        "quantity": "Quantité en stock",
+        "placeholder_quant": "Entrez la quantité disponible",
+        "error_quant": "La quantité est incorrecte",
+        "category": "Catégorie produit",
+        "category_select": "Choisissez une catégorie",
+        "error_cat": "Veuillez sélectionner une catégorie.",
+        "button": "Ajouter le produit",
+        "successful_title": "Votre produit a bien été ajouté !",
+        "successful_text": "Vous pouvez dès maintenant consulter la page de votre produit en cliquant sur le bouton ci-dessous.",
+        "button1": "Voir la page du produit",
+        "button2": "Revenir à l'accueil",
+        "failure_title": "Une erreur s'est produite.",
+        "failure_text": "Votre produit n'a pas pu être ajouté. Veuillez réessayer plus tard.",
+        "button3": "Fermer"
     }
 }

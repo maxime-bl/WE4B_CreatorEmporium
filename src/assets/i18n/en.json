@@ -99,5 +99,33 @@
         "choose_grade": "Choose a rating",
         "grade_error": "Please select a rating",
         "button": "Submit Comment"
-        }
+    },
+    "new_product": {
+        "title": "Add Product",
+        "product_name": "Product Name",
+        "placeholder_prod": "Enter the product name",
+        "product_error": "The product must have a name.",
+        "description": "Description",
+        "placeholder_desc": "Enter the product description",
+        "error_desc": "The product must have a description.",
+        "image": "Add an Image",
+        "error_image": "The product must have an image (png, jpg, or jpeg format).",
+        "price": "Price",
+        "placeholder_price": "Enter a price",
+        "error_price": "The price is incorrect.",
+        "quantity": "Stock Quantity",
+        "placeholder_quant": "Enter the available quantity",
+        "error_quant": "The quantity is incorrect.",
+        "category": "Product Category",
+        "category_select": "Choose a category",
+        "error_cat": "Please select a category.",
+        "button": "Add Product",
+        "succesful_title": "Your product has been successfully added!",
+        "successful_text": "You can now view your product's page by clicking the button below.",
+        "button1": "View Product Page",
+        "button2": "Go Back to Homepage",
+        "failure_title": "An error occurred.",
+        "failure_text": "Your product could not be added. Please try again later.",
+        "button3": "Close"
+    }
 }
