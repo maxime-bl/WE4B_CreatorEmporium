@@ -48,7 +48,7 @@ export default class DatabaseService {
 
   /* Products functions */
 
-  async addProduct(name: string, description: string, price: number, quantity: number, categoryID: string, image: File, sellerName: string) : Promise<string>{
+  async addProduct(name: string, description: string, price: number, quantity: number, categoryID: string, image: File, sellerName: string, sellerID: string) : Promise<string>{
     try {
       const prodRef = await addDoc(collection(this.db, 'products'), {
         name: name,
@@ -57,7 +57,8 @@ export default class DatabaseService {
         quantity: quantity,
         categoryID: ["all", categoryID],
         imagePath: "",
-        seller: sellerName
+        seller: sellerName,
+        sellerID: sellerID,
       })
 
       const imageURL = await this.storageService.uploadProductImage(prodRef.id, image);

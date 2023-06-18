@@ -51,8 +51,9 @@ export class NewProductComponent {
       const quantity = Number(this.productForm.get("quantity")?.value);
       const categoryID = this.productForm.get("category")?.value;
       const seller = this.auth.getCurrentUser()?.displayName;
+      const sellerID = this.auth.getCurrentUser()?.uid;
 
-      this.dbService.addProduct(name!, description!, price!, quantity!, categoryID!, this.image!, seller!).then((res: string)=> {
+      this.dbService.addProduct(name!, description!, price!, quantity!, categoryID!, this.image!, seller!, sellerID!).then((res: string)=> {
         this.productID = res;
         this.sucessDialog.nativeElement.showModal();
         this.isLoading = false;
