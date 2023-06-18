@@ -9,16 +9,19 @@ import { HomeComponent } from './components/home/home.component';
 import { MoreInfoComponent } from './components/more-info/more-info.component';
 import { NewProductComponent } from './components/new-product/new-product.component';
 import { TransactionHistoryComponent } from './components/transaction-history/transaction-history.component';
+import { LoggedInGuard } from './guards/logged-in.guard';
+import { SellerGuard } from './guards/seller.guard';
+import { AnonymousGuard } from './guards/anonymous.guard';
 
 const routes: Routes = [
   {path: "", component: HomeComponent},
   {path: 'market', component: MarketComponent},
   {path: 'product/:id', component: ProductPageComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
+  {path: 'login', component: LoginComponent, canActivate: [AnonymousGuard]},
+  {path: 'register', component: RegisterComponent, canActivate: [AnonymousGuard]},
   {path: 'more-info', component: MoreInfoComponent},
-  {path: 'newproduct', component: NewProductComponent},
-  {path: 'transactions', component: TransactionHistoryComponent}
+  {path: 'newproduct', component: NewProductComponent, canActivate: [SellerGuard]},
+  {path: 'transactions', component: TransactionHistoryComponent, canActivate: [LoggedInGuard]}
 ]
 
 @NgModule({
