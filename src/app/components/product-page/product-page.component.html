@@ -52,7 +52,7 @@
 </div>
 <!-- TODO ajouter les commentaires ici -->
 <div class="container my-5">
-    <h3>Commentaires :</h3>
+    <h3 *transloco="let t; read:'product_page'">{{t("comments")}}</h3>
     <app-comment-form [productID]="productId"></app-comment-form>
     <app-comment-list></app-comment-list>
 </div>

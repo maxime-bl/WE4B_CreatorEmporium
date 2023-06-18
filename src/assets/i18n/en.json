@@ -64,7 +64,8 @@
         "stock2": " left",
         "CGV": "Read the terms and conditions of sale.",
         "add2cart": "Add to cart",
-        "buy": "Buy now"
+        "buy": "Buy now",
+        "comments": "Comments:"
     },
     "modal": {
         "title": "General terms and conditions of sale:",

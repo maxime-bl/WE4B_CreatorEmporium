@@ -63,7 +63,8 @@
         "stock2": " produits",
         "CGV": "Lire les conditions générales de ventes.",
         "add2cart": "Ajouter au panier",
-        "buy": "Acheter maintenant"
+        "buy": "Acheter maintenant",
+        "comments": "Commentaires :"
     },
     "modal": {
         "title": "Conditions générales de vente :",
