@@ -144,5 +144,8 @@
     },
     "product_card": {
         "seller": "Selled by "
+    },
+    "product_list": {
+        "no_prod": "No products match your search."
     }
 }

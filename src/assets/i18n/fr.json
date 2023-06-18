@@ -143,5 +143,8 @@
     },
     "product_card": {
         "seller": "Vendu par "
+    },
+    "product_list": {
+        "no_prod": "Aucun produit ne correspond à votre recherche."
     }
 }
